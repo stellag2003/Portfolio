@@ -1,0 +1,21 @@
+body{
+    background-color: #CFE5F0;
+    color: #53271E;
+
+}
+
+.titulo-destaque{
+    color: #CC7ACC;
+}
+
+h1{
+    font-weight: bold;
+    
+}
+
+span{
+    
+    color: #53271E;
+    border: 1px solid #CC7ACC;
+    padding: 3px;
+}
