@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inconsolata:wght@200..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #CFE5F0;
+    color: #53271E;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+/* Para navegadores WebKit (Chrome, Edge e Safari) */
+::-webkit-scrollbar {
+    width: 3px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: #CFE5F0; /* Cor do fundo da barra */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CC7ACC; /* Cor do "botão" da barra */
+    border-radius: 30px; /* Borda arredondada */
+}
+
+
+.cabecalho {
+    padding: 1% 0% 0% 15%;
+    position: fixed; /* Fixa o cabeçalho na tela */
+    top: 0; /* Gruda no topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Ocupa toda a largura */
+    background-color: #c5e0e7; 
+    padding: 10px 15%; /* Mantém o espaçamento */
+    z-index: 1000; /* Garante que fique acima dos outros elementos */
+}
+
+.cabecalho_menu {
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho_menu_link {
+    font-family: "Bree Serif", serif;
+    font-size: 16px;
+    color: #CC7ACC;
+    text-decoration: none;
+}
+
+.titulo-destaque {
+    color: #CC7ACC;
+}
+
+.apresentacao {
+    width: 100%; /* Garante que ocupe toda a largura */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centraliza tudo verticalmente */
+    text-align: center;
+}
+
+.apresentacao_conteudo {
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Garante que os elementos fiquem no centro */
+    align-items: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    gap: 6px;
+}
+
+.apresentacao_conteudo_titulo {
+    font-size: 55px;
+    font-family: "Bree Serif", serif;
+    padding: 0 9%; /* Reduzi o padding vertical para evitar empurrar o botão */
+    text-align: center;
+}
+
+.apresentacao_conteudo_texto{
+    font-size: 150%;
+    text-align: left;
+    margin: 50px 10px 70px 50px;
+    width: 60%;
+}
+
+.apresentacao_conteudo_flex {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Distribui os elementos */
+    gap: 10px; /* Agora deve funcionar */
+    height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+.apresentacao_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+}
+
+.apresentacao_links_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid #CC7ACC;
+    font-size: 15px;
+    padding: 10px;
+    text-decoration: none;
+    color: #53271E;
+    font-family: "Bree Serif", serif;
+    transition: background-color 0.3s;
+}
+
+.apresentacao_links_link:hover {
+    background-color: #CC7ACC;
+    color: white;
+}
+
+.apresentacao_links_sub {
+    font-size: 20px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.imagem {
+
+    width: 30%;
+    max-width: 300px; /* Define um limite de tamanho */
+    border-radius: 900px;
+}
+
+.rodape {
+    padding: 8px;
+    color: #CC7ACC;
+    background-color: #BAE5F0;
+    text-align: center;
+    font-family: "Bree Serif", serif;
+    font-size: 13px;
+}
+
+

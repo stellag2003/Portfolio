@@ -1,29 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Portfolio</title>
 </head>
 <body>
-   <header></header>
-   <main class="apresentacao">
-      <section class="apresentacao_conteudo">
-        <h1 class="apresentacao_conteudo_titulo" >Olá, seja bem vindo(a)<strong class="titulo-destaque"> ao mundo de Stella!</strong></h1>
-        <p class="apresentacao_conteudo_texto">Sou Stella Gonçalves, desenvolvedora <span>FullStack</span> com especialidade em <strong class="titulo-destaque">JavaScript, HTML, CSS, C#, Python, PHP e Laravel.</strong> Desenvolvo sites e sistemas personalizados para diferentes finalidades. Aqui estão alguns dos projetos que já desenvolvi.</p>
-        <div class="apresentacao_links">
-            <a class="apresentacao_links_link" href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank">Linkedin</a>   
-            <a class="apresentacao_links_link" href="https://github.com/stellag2003" target="_blank">GitHub</a>
+   <header class="cabecalho">
+      <nav class="cabecalho_menu"> 
+         <a class="cabecalho_menu_link" href="#inicio">Home</a>
+         <a class="cabecalho_menu_link" href="#sobre">Sobre mim</a>
+         <a class="cabecalho_menu_link" href="#projetos">Projetos</a>
+         <a class="cabecalho_menu_link" href="#contatos">Contatos</a>
+      </nav>
+   </header>
+   <main class="apresentacao" id="inicio">
+       <section class="apresentacao_conteudo">
+          <h1 class="apresentacao_conteudo_titulo">Olá, seja bem-vindo(a) <strong class="titulo-destaque">ao mundo de Stella!⭐</strong></h1>
+          <div class="apresentacao_links">
+            <a class="apresentacao_links_link" href="https://drive.google.com/file/d/117lI3iaPqYYvgtx_no6aFALc-J1Da2uP/view?usp=sharing" target="_blank">Baixar CV</a>
+          </div>
+       </section>
+
+       <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <div class="apresentacao_conteudo_flex">
+            <p class="apresentacao_conteudo_texto">
+                Sou Stella Gonçalves, desenvolvedora FullStack movida pela paixão por tecnologia, 
+                inovação e pela vontade de deixar minha marca no mundo, tudo isso enquanto me divirto no processo! 
+                Tenho experiência em <strong class="titulo-destaque">JavaScript, HTML, CSS, C# (.NET), Python, PHP, 
+                Laravel e SQL</strong>, criando sites e sistemas que são a cara de quem os utiliza. 
+                Também sou apaixonada por design, e acredito que a estética e a funcionalidade devem andar sempre juntas. 
+                Atualmente, curso <strong class="titulo-destaque">Engenharia de Software</strong>, onde continuo ampliando minhas habilidades e visão sobre o 
+                universo da programação. Estou sempre em busca de aprender mais e aplicar soluções inovadoras, eficientes 
+                e, quem sabe, fazer o mundo um pouco mais tecnológico (e descontraído)! <strong class="titulo-destaque">Aqui estão alguns dos projetos que 
+                já desenvolvi.</strong>
+            </p>
+            <img src="assets/garota.jpg" alt="Ilustração de uma garota" class="imagem">
         </div>
-        <div class="btn-curriculo">
-            <a class="apresentacao_links_link"href="https://drive.google.com/file/d/117lI3iaPqYYvgtx_no6aFALc-J1Da2uP/view?usp=sharing" target="_blank">Baixar CV</a>
-        </div>
-       
     </section>
-    <img src="garota.jpg" alt="ilustração de uma garota" class="imagem">   
+    
+            <h2>Projetos</h2>
+        </section>
+
+        <section id="contatos">
+            <h2>Contatos</h2>
+            <div class="apresentacao_links">
+                <h2 class="apresentacao_links_sub">Minhas redes:</h2>
+                <a class="apresentacao_links_link" href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank">
+                    <img src="assets/linkedin.png" alt=""> LinkedIn
+                </a>   
+                <a class="apresentacao_links_link" href="https://github.com/stellag2003" target="_blank">
+                    <img src="assets/github.png" alt=""> GitHub
+                </a>
+            </div>
+        </section>
+   
    </main>
-<footer></footer>
+    
+    <footer class="rodape">
+        <p>© Stella Gonçalves 2025</p>
+    </footer>
+    
     <script src="script.js"></script>
 </body>
-</html>s
+</html>
