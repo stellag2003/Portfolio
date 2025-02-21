@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Portfolio</title>
 </head>
@@ -20,11 +21,12 @@
           <h1 class="apresentacao_conteudo_titulo">Olá, seja bem-vindo(a) <strong class="titulo-destaque">ao mundo de Stella!⭐</strong></h1>
           <div class="apresentacao_links">
             <a class="apresentacao_links_link" href="https://drive.google.com/file/d/117lI3iaPqYYvgtx_no6aFALc-J1Da2uP/view?usp=sharing" target="_blank">Baixar CV</a>
+            <i class="fas fa-arrow-down btn_flecha"></i>
           </div>
        </section>
 
        <section id="sobre">
-        <h2>Sobre Mim</h2>
+        <h2 class="apresentacao_links_sub">Sobre Mim</h2>
         <div class="apresentacao_conteudo_flex">
             <p class="apresentacao_conteudo_texto">
                 Sou Stella Gonçalves, desenvolvedora FullStack movida pela paixão por tecnologia, 
@@ -41,26 +43,47 @@
         </div>
     </section>
     
-            <h2>Projetos</h2>
+        <!-- <section>
+
+            <h2 class="apresentacao_links_sub">Projetos</h2>
+            <img src="" alt="">
+
         </section>
+          -->
 
         <section id="contatos">
-            <h2>Contatos</h2>
+            <h2 class="apresentacao_links_sub">Contatos</h2>
             <div class="apresentacao_links">
-                <h2 class="apresentacao_links_sub">Minhas redes:</h2>
-                <a class="apresentacao_links_link" href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank">
-                    <img src="assets/linkedin.png" alt=""> LinkedIn
-                </a>   
-                <a class="apresentacao_links_link" href="https://github.com/stellag2003" target="_blank">
-                    <img src="assets/github.png" alt=""> GitHub
-                </a>
+                <div class="icones">
+                   
+                    <button class="btn_redes_sociais">
+                        <a href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank">
+                            <i class="fa-brands fa-linkedin icone"></i>
+                        </a>
+                    </button>
+
+                    <button class="btn_redes_sociais" > 
+                        <a href="https://github.com/stellag2003" target="_blank">
+                            <i class="fa-brands fa-github icone"></i>
+                        </a>
+                    </button>
+
+                    <button class="btn_redes_sociais">
+                        <a href="https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?" target="_blank">
+                            <i class="fa-solid fa-envelope icone"></i>
+                        </a>
+                    </button>
+                    
+                   
+                </div>
             </div>
+            
         </section>
    
    </main>
     
     <footer class="rodape">
-        <p>© Stella Gonçalves 2025</p>
+        <p>Desenvolvido por Stella Gonçalves | 2025</p>
     </footer>
     
     <script src="script.js"></script>

@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inconsolata:wght@200..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+:root{
+    --cor-primaria: #CFE5F0; 
+    --cor-secundaria: #CC7ACC;
+    --cor-terciaria: #53271E;
+
+    --fonte-principal: "Josefin Sans", sans-serif;
+    --fonte-secundaria: "Bree Serif", serif;
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +17,9 @@
 }
 
 body {
-    background-color: #CFE5F0;
-    color: #53271E;
-    font-family: "Josefin Sans", sans-serif;
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-principal);
 }
 
 /* Para navegadores WebKit (Chrome, Edge e Safari) */
@@ -18,13 +28,19 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #CFE5F0; /* Cor do fundo da barra */
+    background: var(--cor-primaria);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #CC7ACC; /* Cor do "botão" da barra */
-    border-radius: 30px; /* Borda arredondada */
+    background: var(--cor-secundaria); /* Cor do "botão" da barra */
+    border-radius: 30px; 
 }
+
+::-webkit-scrollbar-thumb:hover {
+    background-color:#E67ACC;
+    border: 5px  /* Borda visível ao passar o mouse */
+}
+
 
 
 .cabecalho {
@@ -44,14 +60,14 @@ body {
 }
 
 .cabecalho_menu_link {
-    font-family: "Bree Serif", serif;
+    font-family: var(--fonte-secundaria);
     font-size: 16px;
-    color: #CC7ACC;
+    color: var(--cor-secundaria);
     text-decoration: none;
 }
 
 .titulo-destaque {
-    color: #CC7ACC;
+    color: var(--cor-secundaria);
 }
 
 .apresentacao {
@@ -64,18 +80,18 @@ body {
 }
 
 .apresentacao_conteudo {
+    margin: 200px 0px 167px 0px;
     width: 615px;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Garante que os elementos fiquem no centro */
     align-items: center;
-    height: 100vh; /* Ocupa toda a altura da tela */
     gap: 6px;
 }
 
 .apresentacao_conteudo_titulo {
     font-size: 55px;
-    font-family: "Bree Serif", serif;
+    font-family: var(--fonte-principal);
     padding: 0 9%; /* Reduzi o padding vertical para evitar empurrar o botão */
     text-align: center;
 }
@@ -83,16 +99,16 @@ body {
 .apresentacao_conteudo_texto{
     font-size: 150%;
     text-align: left;
-    margin: 50px 10px 70px 50px;
+    margin: 10px 10px 20px 50px;
     width: 60%;
+    font-family: var(--fonte-secundaria);
 }
 
 .apresentacao_conteudo_flex {
     display: flex;
     align-items: center; /* Alinha verticalmente */
     justify-content: center; /* Distribui os elementos */
-    gap: 10px; /* Agora deve funcionar */
-    height: 100vh; /* Ocupa toda a altura da tela */
+    gap: 10px; 
 }
 
 .apresentacao_links {
@@ -101,6 +117,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 11px;
+    margin-bottom: 60px;
 }
 
 .apresentacao_links_link {
@@ -112,22 +129,23 @@ body {
     height: 40px;
     text-align: center;
     border-radius: 20px;
-    border: 2px solid #CC7ACC;
+    border: 2px solid var(--cor-secundaria);
     font-size: 15px;
     padding: 10px;
     text-decoration: none;
     color: #53271E;
-    font-family: "Bree Serif", serif;
+    font-family: var(--fonte-principal);
     transition: background-color 0.3s;
 }
 
 .apresentacao_links_link:hover {
-    background-color: #CC7ACC;
-    color: white;
+    background-color: var(--cor-secundaria);
+   
 }
 
 .apresentacao_links_sub {
-    font-size: 20px;
+    font-size: 25px;
+    color: #E67ACC;
 }
 
 h1 {
@@ -139,14 +157,60 @@ h1 {
     width: 30%;
     max-width: 300px; /* Define um limite de tamanho */
     border-radius: 900px;
+    margin-bottom: 90px;
+}
+
+.btn_redes_sociais{
+    border-color:var(--cor-primaria);
+    background-color: var(--cor-primaria);
+    border-style: none;
+    margin: 10px 0 10px 0;
+
+}
+
+
+/* Animação de pulo */
+/* Animação de pulo */
+@keyframes pular {
+    0% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Move a flecha para cima */
+    }
+    100% {
+        transform: translateY(0); /* Volta à posição inicial */
+    }
+}
+
+/* Aplica a animação ao ícone da flecha */
+.btn_flecha {
+    margin-top: 150px;
+    animation: pular 1s infinite; /* Repete a animação infinitamente */
+    margin-left: 8px; /* Espaçamento entre o texto e o ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    color: var(--cor-secundaria);
+    cursor: pointer; /* Mostra que o ícone é clicável */
+}
+
+.icone{
+   font-size: 35px;
+   color:var(--cor-terciaria);   
+   
+}
+
+.icone:hover{
+    color:#E67ACC;
+
+
 }
 
 .rodape {
     padding: 8px;
-    color: #CC7ACC;
+    color: var(--cor-secundaria);
     background-color: #BAE5F0;
     text-align: center;
-    font-family: "Bree Serif", serif;
+    font-family: var(--fonte-principal);
     font-size: 13px;
 }
 
