@@ -3,7 +3,8 @@
 :root{
     --cor-primaria: #CFE5F0; 
     --cor-secundaria: #CC7ACC;
-    --cor-terciaria: #53271E;
+    --cor-terciaria: #6486F0;
+    --cor-titulos: #E67ACC;
 
     --fonte-principal: "Josefin Sans", sans-serif;
     --fonte-secundaria: "Bree Serif", serif;
@@ -37,10 +38,9 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color:#E67ACC;
+    background-color:var(--cor-titulos);
     border: 5px  /* Borda visível ao passar o mouse */
 }
-
 
 
 .cabecalho {
@@ -61,7 +61,7 @@ body {
 
 .cabecalho_menu_link {
     font-family: var(--fonte-secundaria);
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--cor-secundaria);
     text-decoration: none;
 }
@@ -80,7 +80,7 @@ body {
 }
 
 .apresentacao_conteudo {
-    margin: 200px 0px 167px 0px;
+    margin: 200px 0px 40px 0px;
     width: 615px;
     display: flex;
     flex-direction: column;
@@ -90,14 +90,29 @@ body {
 }
 
 .apresentacao_conteudo_titulo {
-    font-size: 55px;
+    font-size: 3.43rem;
     font-family: var(--fonte-principal);
     padding: 0 9%; /* Reduzi o padding vertical para evitar empurrar o botão */
     text-align: center;
 }
 
+/* Aplica a animação ao ícone da seta */
+.btn_flecha {
+    margin-top: 150px;
+    animation: pular 1s infinite; /* Repete a animação infinitamente */
+    margin-left: 8px; /* Espaçamento entre o texto e o ícone */
+    font-size: 1.5rem; /* Tamanho do ícone */
+    color: var(--cor-secundaria);
+
+}
+
+.apresentacao_links_sub {
+    font-size: 1.56rem;
+    color: var(--cor-titulos);
+}
+
 .apresentacao_conteudo_texto{
-    font-size: 150%;
+    font-size: 1.43rem;
     text-align: left;
     margin: 10px 10px 20px 50px;
     width: 60%;
@@ -108,7 +123,7 @@ body {
     display: flex;
     align-items: center; /* Alinha verticalmente */
     justify-content: center; /* Distribui os elementos */
-    gap: 10px; 
+    gap: 30px; 
 }
 
 .apresentacao_links {
@@ -130,10 +145,10 @@ body {
     text-align: center;
     border-radius: 20px;
     border: 2px solid var(--cor-secundaria);
-    font-size: 15px;
+    font-size: 1.06rem;
     padding: 10px;
     text-decoration: none;
-    color: #53271E;
+    color: var(--cor-terciaria);
     font-family: var(--fonte-principal);
     transition: background-color 0.3s;
 }
@@ -143,10 +158,7 @@ body {
    
 }
 
-.apresentacao_links_sub {
-    font-size: 25px;
-    color: #E67ACC;
-}
+
 
 h1 {
     font-weight: bold;
@@ -159,18 +171,61 @@ h1 {
     border-radius: 900px;
     margin-bottom: 90px;
 }
+.conteiner-slider{
+    display:flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 1rem;
+
+}
+
+.conteiner-imagens{
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px
+}
+
+.slider{
+    opacity: 0;
+    transition: opacity .2s;
+    display: flex;
+    position: absolute;
+    height: 500px;
+
+    
+
+}
+
+.on{
+    opacity: 1;
+
+}
+
+.btn-proximo, .btn-anterior{
+    font-size: 35px;
+    width: 300px;
+    height: 700px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--cor-secundaria);
+
+}
 
 .btn_redes_sociais{
     border-color:var(--cor-primaria);
     background-color: var(--cor-primaria);
     border-style: none;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 0 0;
 
 }
 
 
-/* Animação de pulo */
-/* Animação de pulo */
+/* Animação seta */
 @keyframes pular {
     0% {
         transform: translateY(0); /* Posição inicial */
@@ -183,35 +238,32 @@ h1 {
     }
 }
 
-/* Aplica a animação ao ícone da flecha */
-.btn_flecha {
-    margin-top: 150px;
-    animation: pular 1s infinite; /* Repete a animação infinitamente */
-    margin-left: 8px; /* Espaçamento entre o texto e o ícone */
-    font-size: 24px; /* Tamanho do ícone */
-    color: var(--cor-secundaria);
-    cursor: pointer; /* Mostra que o ícone é clicável */
-}
+
+
 
 .icone{
-   font-size: 35px;
+   font-size: 2.18rem;
    color:var(--cor-terciaria);   
    
 }
 
 .icone:hover{
-    color:#E67ACC;
+    color:var(--cor-titulos);
 
 
 }
 
+.star-icone{
+    color: #eed91d;
+}
+
 .rodape {
-    padding: 8px;
-    color: var(--cor-secundaria);
+    padding: 15px;
+    color: var(--cor-titulos);
     background-color: #BAE5F0;
     text-align: center;
     font-family: var(--fonte-principal);
-    font-size: 13px;
+    font-size: 1rem;
 }
 
 

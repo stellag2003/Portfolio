@@ -18,7 +18,8 @@
    </header>
    <main class="apresentacao" id="inicio">
        <section class="apresentacao_conteudo">
-          <h1 class="apresentacao_conteudo_titulo">Olá, seja bem-vindo(a) <strong class="titulo-destaque">ao mundo de Stella!⭐</strong></h1>
+          <h1 class="apresentacao_conteudo_titulo">Olá, seja bem-vindo(a) <strong class="titulo-destaque">ao mundo de Stella! <i class="fas fa-star star-icone"></i>
+          </strong></h1>
           <div class="apresentacao_links">
             <a class="apresentacao_links_link" href="https://drive.google.com/file/d/117lI3iaPqYYvgtx_no6aFALc-J1Da2uP/view?usp=sharing" target="_blank">Baixar CV</a>
             <i class="fas fa-arrow-down btn_flecha"></i>
@@ -26,9 +27,11 @@
        </section>
 
        <section id="sobre">
-        <h2 class="apresentacao_links_sub">Sobre Mim</h2>
+        <h2 id="texto-sobre-mim" style="display: none;" >Sobre Mim</h2>
+        <h3 class="apresentacao_links_sub" id="texto"></h3>
         <div class="apresentacao_conteudo_flex">
-            <p class="apresentacao_conteudo_texto">
+            <p class="apresentacao_conteudo_texto" >
+               
                 Sou Stella Gonçalves, desenvolvedora FullStack movida pela paixão por tecnologia, 
                 inovação e pela vontade de deixar minha marca no mundo, tudo isso enquanto me divirto no processo! 
                 Tenho experiência em <strong class="titulo-destaque">JavaScript, HTML, CSS, C# (.NET), Python, PHP, 
@@ -38,21 +41,42 @@
                 universo da programação. Estou sempre em busca de aprender mais e aplicar soluções inovadoras, eficientes 
                 e, quem sabe, fazer o mundo um pouco mais tecnológico (e descontraído)! <strong class="titulo-destaque">Aqui estão alguns dos projetos que 
                 já desenvolvi.</strong>
+              
             </p>
             <img src="assets/garota.jpg" alt="Ilustração de uma garota" class="imagem">
         </div>
     </section>
+
+  
     
-        <!-- <section>
+        <section>
 
             <h2 class="apresentacao_links_sub">Projetos</h2>
-            <img src="" alt="">
+            <div class="conteiner-slider">
+
+               <button class="btn-proximo">
+                <i class="fas fa-arrow-left"></i>
+               </button>
+                <div class="conteiner-imagens">
+                 <img src="assets/ice_cream_clicker.png" alt="imagem jogo" class="slider">
+                 <img src="assets/player_musica.png" alt="imagem player músicas" class="slider">
+                 <img src="assets/numero_secreto.png" alt="imagem jogo de adivinhar numeros" class="slider">
+                 <img src="assets/streaming.png" alt="imagem da tela de login de um streaming" class="slider on">
+                 <img src="assets/amigo_secreto.png" alt="imagem sorteador de amigos" class="slider">
+               </div>
+
+               <button class="btn-anterior">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            </div>
+          
 
         </section>
-          -->
+         
 
         <section id="contatos">
-            <h2 class="apresentacao_links_sub">Contatos</h2>
+            <h2 id="texto-contatos" style="display: none;">Contatos</h2>
+            <h3 class="apresentacao_links_sub" id="texto2"></h3>
             <div class="apresentacao_links">
                 <div class="icones">
                    
