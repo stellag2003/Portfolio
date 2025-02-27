@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Portfolio</title>
+    <title> ⭐ Portfólio Stella Gonçalves</title>
 </head>
 <body>
    <header class="cabecalho">
       <nav class="cabecalho_menu"> 
-         <a class="cabecalho_menu_link" href="#inicio">Home</a>
          <a class="cabecalho_menu_link" href="#sobre">Sobre mim</a>
          <a class="cabecalho_menu_link" href="#projetos">Projetos</a>
          <a class="cabecalho_menu_link" href="#contatos">Contatos</a>
       </nav>
    </header>
+   <div class="container">
+    <!-- Cabeçalho lateral com redes sociais -->
+    <aside class="sidebar">
+        <a href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank">
+            <i class="fa-brands fa-linkedin icone"></i>
+        </a>
+        <a href="https://github.com/stellag2003" target="_blank">
+            <i class="fa-brands fa-github icone"></i>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?" target="_blank">
+            <i class="fa-solid fa-envelope icone"></i>
+        </a>
+    </aside>
+
    <main class="apresentacao" id="inicio">
        <section class="apresentacao_conteudo">
           <h1 class="apresentacao_conteudo_titulo">Olá, seja bem-vindo(a) <strong class="titulo-destaque">ao mundo de Stella! <i class="fas fa-star star-icone"></i>
@@ -26,56 +39,48 @@
           </div>
        </section>
 
-       <section id="sobre">
-        <h2 id="texto-sobre-mim" style="display: none;" >Sobre Mim</h2>
+       <section id="sobre" >
+        <h2 id="texto-sobre-mim" style="display: none;" class="sobre_mim" >Sobre Mim</h2>
         <h3 class="apresentacao_links_sub" id="texto"></h3>
         <div class="apresentacao_conteudo_flex">
             <p class="apresentacao_conteudo_texto" >
                
-                Sou Stella Gonçalves, desenvolvedora FullStack movida pela paixão por tecnologia, 
-                inovação e pela vontade de deixar minha marca no mundo, tudo isso enquanto me divirto no processo! 
-                Tenho experiência em <strong class="titulo-destaque">JavaScript, HTML, CSS, C# (.NET), Python, PHP, 
-                Laravel e SQL</strong>, criando sites e sistemas que são a cara de quem os utiliza. 
-                Também sou apaixonada por design, e acredito que a estética e a funcionalidade devem andar sempre juntas. 
-                Atualmente, curso <strong class="titulo-destaque">Engenharia de Software</strong>, onde continuo ampliando minhas habilidades e visão sobre o 
-                universo da programação. Estou sempre em busca de aprender mais e aplicar soluções inovadoras, eficientes 
-                e, quem sabe, fazer o mundo um pouco mais tecnológico (e descontraído)! <strong class="titulo-destaque">Aqui estão alguns dos projetos que 
-                já desenvolvi.</strong>
+                Sou Stella Gonçalves, <strong class="titulo-destaque">desenvolvedora FullStack</strong> apaixonada por tecnologia e design. 
+                Tenho experiência em <strong class="titulo-destaque">JavaScript, HTML, CSS, C# (.NET), Python, PHP, Laravel, SQL, Figma, Canva e Adobe Color</strong>, 
+                criando soluções que unem estética e funcionalidade. Atualmente, curso <strong class="titulo-destaque">Engenharia de Software</strong> e estou sempre em busca de 
+                aprender mais e inovar. 
+                Confira alguns dos projetos que já desenvolvi.
               
             </p>
-            <img src="assets/garota.jpg" alt="Ilustração de uma garota" class="imagem">
+            <img src="assets/eu.jpg" alt="Ilustração de uma garota" class="imagem">
         </div>
     </section>
 
-  
-    
-        <section>
-
-            <h2 class="apresentacao_links_sub">Projetos</h2>
+        <section id="projetos" >
+            <h2 class="texto-projetos apresentacao_links_sub" class="projetos" >Projetos</h2>
             <div class="conteiner-slider">
-
-               <button class="btn-proximo">
-                <i class="fas fa-arrow-left"></i>
-               </button>
                 <div class="conteiner-imagens">
+                 <img src="assets/player_musica.png" alt="imagem player músicas" class="slider" >
                  <img src="assets/ice_cream_clicker.png" alt="imagem jogo" class="slider">
-                 <img src="assets/player_musica.png" alt="imagem player músicas" class="slider">
                  <img src="assets/numero_secreto.png" alt="imagem jogo de adivinhar numeros" class="slider">
-                 <img src="assets/streaming.png" alt="imagem da tela de login de um streaming" class="slider on">
+                 <img src="assets/streaming.png" alt="imagem da tela de login de um streaming" class="slider">
                  <img src="assets/amigo_secreto.png" alt="imagem sorteador de amigos" class="slider">
                </div>
 
-               <button class="btn-anterior">
-                <i class="fas fa-arrow-right"></i>
-            </button>
-            </div>
-          
+               <div class="btn_bolhinhas">
+                <button class="btn-anterior">
+                    <i class="fas fa-circle"></i>
+                   </button>
 
+                   <button class="btn-proximo">
+                    <i class="fas fa-circle"></i>
+                </button>
+               </div>
+            </div>
         </section>
          
-
         <section id="contatos">
-            <h2 id="texto-contatos" style="display: none;">Contatos</h2>
+            <h2 id="texto-contatos" style="display: none;" class="contatos" >Contatos</h2>
             <h3 class="apresentacao_links_sub" id="texto2"></h3>
             <div class="apresentacao_links">
                 <div class="icones">
@@ -110,6 +115,6 @@
         <p>Desenvolvido por Stella Gonçalves | 2025</p>
     </footer>
     
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
