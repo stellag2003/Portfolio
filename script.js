@@ -1,68 +1,76 @@
-const conteiner = document.querySelector('.conteiner-imagens'); // Um único contêiner
+const conteiner = document.querySelector('.conteiner-imagens');
 const btnProximo = document.querySelector('.btn-proximo');
 const btnAnterior = document.querySelector('.btn-anterior');
 
 let index = 0;
 const totalImagens = document.querySelectorAll(".slider").length;
-const imagensVisiveis = 4;
+const imagensVisiveis = 3; // Corrigido para 3 imagens visíveis
 const larguraImagem = document.querySelector(".slider").clientWidth;
+const gap = 10; // Espaço entre as imagens (definido no CSS)
 
 btnProximo.addEventListener("click", () => {
     if (index < totalImagens - imagensVisiveis) {
         index++;
-        conteiner.style.transform = `translateX(-${index * (larguraImagem + 310)}px)`;
+        conteiner.style.transform = `translateX(-${index * (larguraImagem + gap)}px)`;
     }
 });
 
 btnAnterior.addEventListener("click", () => {
     if (index > 0) {
         index--;
-        conteiner.style.transform = `translateX(-${index * (larguraImagem + 10)}px)`;
+        conteiner.style.transform = `translateX(-${index * (larguraImagem + gap)}px)`;
     }
 });
 
 
-function escrever() {
-    const texto = document.getElementById("texto-sobre-mim").innerHTML;
-    const texto2 = document.getElementById("texto-contatos").innerHTML;
+// Função de máquina de escrever
+function typeWriter(element, text, speed) {
+    let i = 0;
+    element.style.display = 'block'; // Exibe o elemento
+    element.innerHTML = ''; // Limpa o conteúdo
 
-    let i1 = 0; // Para o primeiro texto
-    let i2 = 0; // Para o segundo texto
-
-    // Função de digitação para ambos os textos
-    function digitar() {
-        if (i1 < texto.length) {
-            document.getElementById("texto").innerHTML += texto.charAt(i1);
-            i1++;
-        }
-        if (i2 < texto2.length) {
-            document.getElementById("texto2").innerHTML += texto2.charAt(i2);
-            i2++;
-        }
-
-        if (i1 < texto.length || i2 < texto2.length) {
-            setTimeout(digitar, 100); // Ajuste a velocidade aqui
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
         } else {
-            document.getElementById("texto").style.borderRight = "none"; // Remove o cursor quando termina
-            document.getElementById("texto2").style.borderRight = "none"; // Remove o cursor quando termina
-     }
+            element.style.borderRight = 'none'; // Remove o cursor quando termina
+        }
     }
-
-    digitar();
+    type();
 }
 
-// Função que verifica a rolagem da página e dispara a digitação
-window.onscroll = function() {
-    const textoDiv = document.getElementById("texto");
-    const textoDivPos = textoDiv.getBoundingClientRect().top;
-    const textoDiv2 = document.getElementById("texto2");
-    const textoDiv2Pos = textoDiv2.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+// Função para observar as seções e disparar a animação
+function observarSecoes() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetId = entry.target.id; // Pega o ID da seção visível
+                const textElement = document.querySelector(`#texto-${targetId}`); // Encontra o título correspondente
 
-    // Inicia o efeito quando qualquer uma das divs estiver visível na tela
-    if ((textoDivPos < windowHeight) || (textoDiv2Pos < windowHeight) ) {
-        escrever();
-        window.onscroll = null; // Desativa o evento após iniciar o efeito
-    }
-};
+                if (textElement) {
+                    const text = textElement.textContent || textElement.innerText; // Pega o texto do título
+                    typeWriter(textElement, text, 100); // Inicia a animação
+                }
+
+                observer.unobserve(entry.target); // Para de observar após a animação ser disparada
+            }
+        });
+    }, {
+        threshold: 0.5 // Dispara a animação quando 50% da seção estiver visível
+    });
+
+    // Observa as seções "sobre", "contatos" e "projetos"
+    const sobreSection = document.getElementById('sobre');
+    const contatosSection = document.getElementById('contatos');
+    const projetosSection = document.getElementById('projetos');
+
+    if (sobreSection) observer.observe(sobreSection);
+    if (contatosSection) observer.observe(contatosSection);
+    if (projetosSection) observer.observe(projetosSection);
+}
+
+// Inicia a observação das seções quando a página carrega
+document.addEventListener('DOMContentLoaded', observarSecoes);
 

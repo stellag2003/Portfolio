@@ -22,7 +22,7 @@ body {
     background-color: var(--cor-primaria);
     color: var(--cor-terciaria);
     font-family: var(--fonte-principal);
-    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='32' viewBox='0 0 24 24'><text y='20' font-size='17'>⭐</text></svg>"), auto;;
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='32' viewBox='0 0 24 24'><text y='20' font-size='20'>⭐</text></svg>"), auto;;
 }
 
 /* Para navegadores WebKit (Chrome, Edge e Safari) */
@@ -130,7 +130,7 @@ body {
     margin-top: 150px;
     animation: pular 1s infinite; /* Repete a animação infinitamente */
     margin-left: 8px; /* Espaçamento entre o texto e o ícone */
-    font-size: 1.5rem; /* Tamanho do ícone */
+    font-size: 1.7rem; /* Tamanho do ícone */
     color: var(--cor-secundaria);
 
 }
@@ -143,7 +143,7 @@ body {
 .apresentacao_conteudo_texto{
     font-size: 1.43rem;
     text-align: left;
-    margin: 10px 10px 110px 50px;
+    margin: 0 10px 120px 50px;
     width: 60%;
     font-family: var(--fonte-secundaria);
 }
@@ -152,13 +152,13 @@ body {
     display: flex;
     align-items: center; /* Alinha verticalmente */
     justify-content: center; /* Distribui os elementos */
-    gap: 30px; 
+    gap: 20px; 
 }
 
 .imagem {
     width: 25%;
-    border-radius: 70px;
-    margin-bottom: 120px;
+    border-radius: 180px;
+    margin: 10px 0 90px 0;
 }
 
 .apresentacao_links {
@@ -219,6 +219,11 @@ h1 {
     flex-shrink: 0;
 }
 
+.slider:hover{
+    transform: scale(0.9);
+    transition: transform 0.9s;
+}
+
 
 .on{
     opacity: 1;
@@ -252,7 +257,6 @@ h1 {
     cursor: pointer;
 
 }
-
 
 .btn_redes_sociais{
     border-color:var(--cor-primaria);
