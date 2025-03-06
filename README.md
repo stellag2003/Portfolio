@@ -68,7 +68,7 @@ Bem-vindo ao meu primeiro portfólio, onde compartilho meus projetos e habilidad
 
 ## 🔗 Acesso ao Projeto
 
-👉 [Clique aqui para acessar o meu portfólio!](https://seu-link-do-portfolio.com)
+👉 [Clique aqui para acessar o meu portfólio!](https://stellag2003.github.io/Portfolio/)
 
 ---
 
