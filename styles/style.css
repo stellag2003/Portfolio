@@ -12,6 +12,7 @@
 
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +23,6 @@ body {
     background-color: var(--cor-primaria);
     color: var(--cor-terciaria);
     font-family: var(--fonte-principal);
-    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='32' viewBox='0 0 24 24'><text y='20' font-size='20'>⭐</text></svg>"), auto;;
 }
 
 /* Para navegadores WebKit (Chrome, Edge e Safari) */
@@ -52,7 +52,7 @@ body {
     left: 0; /* Alinha à esquerda */
     width: 100%; /* Ocupa toda a largura */
     background-color:var(--cor-cabecalho); 
-    padding: 10px 15%; /* Mantém o espaçamento */
+    padding: 1% 15%; /* Mantém o espaçamento */
     z-index: 1000; /* Garante que fique acima dos outros elementos */
 }
 
@@ -63,7 +63,7 @@ body {
 
 .cabecalho_menu_link {
     font-family: var(--fonte-secundaria);
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: var(--cor-secundaria);
     text-decoration: none;
 }
@@ -77,16 +77,26 @@ body {
     flex-direction: column; /* Deixa os ícones na vertical */
     gap: 15px; /* Espaço entre os ícones */
     background-color: var(--cor-cabecalho);
-    padding: 10px;
+    padding: 1%;
     border-radius: 0 10px 10px 0; /* Borda arredondada só do lado direito */
 }
 
 .sidebar a {
     text-decoration: none;
     color: white;
-    font-size: 24px; /* Tamanho dos ícones */
     transition: 0.3s;
 }
+
+.icone{
+    font-size: 3.18rem;
+    color:var(--cor-terciaria);   
+    
+ }
+ 
+ .icone:hover{
+     color:var(--cor-titulos);
+ 
+ }
 
 
 .titulo-destaque {
@@ -104,7 +114,7 @@ body {
 }
 
 .apresentacao_conteudo {
-    margin: 200px 0px 40px 0px;
+    margin: 15% 0 0 0;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -114,7 +124,7 @@ body {
 }
 
 .apresentacao_conteudo_titulo {
-    font-size: 3.43rem;
+    font-size: 5.43rem;
     font-family: var(--fonte-principal);
     padding: 0 9%; /* Reduzi o padding vertical para evitar empurrar o botão */
     text-align: center;
@@ -122,26 +132,28 @@ body {
 
 .star-icone{
     color: #FCD53F;
+    font-size: 5rem;
+    margin-left: 2px;
 }
 
 
 /* Aplica a animação ao ícone da seta */
 .btn_flecha {
-    margin-top: 150px;
+    margin: 200% 0 50% 0;
     animation: pular 1s infinite; /* Repete a animação infinitamente */
     margin-left: 8px; /* Espaçamento entre o texto e o ícone */
-    font-size: 1.7rem; /* Tamanho do ícone */
+    font-size: 3.5rem; /* Tamanho do ícone */
     color: var(--cor-secundaria);
 
 }
 
 .apresentacao_links_sub {
-    font-size: 1.56rem;
+    font-size: 2.43rem;
     color: var(--cor-titulos);
 }
 
 .apresentacao_conteudo_texto{
-    font-size: 1.43rem;
+    font-size: 2.20rem;
     text-align: left;
     margin: 0 10px 120px 50px;
     width: 60%;
@@ -152,13 +164,12 @@ body {
     display: flex;
     align-items: center; /* Alinha verticalmente */
     justify-content: center; /* Distribui os elementos */
-    gap: 20px; 
 }
 
 .imagem {
     width: 25%;
-    border-radius: 180px;
-    margin: 10px 0 90px 0;
+    border-radius: 50%;
+    margin: 10px 0 30px 0;
 }
 
 .apresentacao_links {
@@ -167,7 +178,6 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 50px;
 }
 
 .apresentacao_links_link {
@@ -175,13 +185,13 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 110%;
+    width: 160%;
     height: 40px;
     text-align: center;
-    border-radius: 20px;
-    border: 2px solid var(--cor-secundaria);
-    font-size: 1.06rem;
-    padding: 10px;
+    border-radius: 50px;
+    border: 0.2em solid var(--cor-secundaria);
+    font-size: 1.5rem;
+    padding: 23% 5% 23% 5%;
     text-decoration: none;
     color: var(--cor-terciaria);
     font-family: var(--fonte-principal);
@@ -200,24 +210,27 @@ h1 {
 
 
 .conteiner-slider {
-    width: 100%; /* Ajuste conforme necessário */
-    max-width: 900px; /* Define um limite maior para acomodar 3 imagens */
+    width: 80%; /* Ajuste conforme necessário */
+    max-width: 100%; /* Define um limite maior para acomodar 3 imagens */
     overflow: hidden;
-    position: relative;
+    position: relative; /* Permite usar o 'top' para ajustar a posição */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    top: 30px; /* Adiciona a margem superior de 30px */
 }
 
 .conteiner-imagens {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    gap: 10px; /* Espaço entre as imagens */
+    gap: 14px; /* Espaço entre as imagens */
+    width: 100%; /* Garantir que o contêiner ocupe toda a largura disponível */
 }
 
 .slider {
     display: block;
-    margin: 30px 0;
-    width: calc(100% / 3.1); /* Mostra 3 imagens ao mesmo tempo */
+    width: calc(33.33% - 50px); /* Ajustar para que a soma das larguras com o gap caiba na tela */
     flex-shrink: 0;
 }
+
 
 .slider:hover{
     transform: scale(0.9);
@@ -231,9 +244,7 @@ h1 {
 }
 
 .btn-proximo, .btn-anterior{
-    font-size: 9px;
-    width: 5px;
-    height: 5px;
+    font-size: 0.8rem;
     border: none;
     background-color: transparent;
     color: var(--cor-secundaria);
@@ -250,7 +261,7 @@ h1 {
     display: flex;
     justify-content: center; /* Centraliza os botões horizontalmente */
     gap: 13px; /* Espaço entre os botões */
-    margin-bottom: 100px;
+    margin: 30px 0 100px 0;
 }
 
 .btn_bolhinhas:hover{
@@ -280,31 +291,73 @@ h1 {
 }
 
 
-.icone{
-   font-size: 2.18rem;
-   color:var(--cor-terciaria);   
-   
-}
-
-.icone:hover{
-    color:var(--cor-titulos);
-
-}
-
-
 .rodape {
-    padding: 15px;
+    padding: 1%;
     color: var(--cor-titulos);
     background-color: #BAE5F0;
     text-align: center;
     font-family: var(--fonte-principal);
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-top: 4%;
 }
 
 @media (max-width: 1200px) {
+    .cabecalho {
+        padding: 1%;
+    }
 
-    .apresentacao{
+    .cabecalho_menu {
+        justify-content: center;
+    }
+
+    .apresentacao_conteudo {
+        margin: 50% 0 0 0;
+    }
+
+    .apresentacao_links_link {
+        margin-left: 10px;
+        font-size: 2rem;
+    }
+
+    .apresentacao_conteudo_flex {
         flex-direction: column-reverse;
     }
+
+    .imagem {
+        width: 30%;
+        border-radius: 50%;
+    }
+
+    .apresentacao_links_sub {
+        margin-bottom: 40px;
+        font-size: 3.43rem;
+    }
+
+    .conteiner-slider {
+        width: 100%;
+    }
+
+    .conteiner-imagens {
+        flex-direction: column;
+    }
+
+    .slider {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .btn-anterior, .btn-proximo {
+        display: none;
+    }
+
+    .icone {
+        font-size: 4.18rem;
+        color: var(--cor-terciaria);
+    }
+
+    .cabecalho_menu_link {
+        font-size: 2.4rem;
+    }
 }
+
 
