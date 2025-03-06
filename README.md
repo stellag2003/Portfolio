@@ -28,7 +28,7 @@ Bem-vindo ao meu primeiro portfólio, onde compartilho meus projetos e habilidad
 
 7. **Link para E-mail** 📧
    - Inclui um link direto para o meu e-mail, facilitando o contato.
-   - [Clique aqui para me enviar um e-mail!](https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?)
+   - [Clique aqui para me enviar um e-mail!](https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá!)
 
 8. **Download do Currículo** 📄
    - Há um link para baixar meu currículo em PDF, permitindo que você tenha acesso rápido ao meu histórico profissional.
