@@ -1,4 +1,4 @@
-# Meu Primeiro Portfólio 🎉
+# Meu Primeiro Portfólio
 
 Bem-vindo ao meu primeiro portfólio, onde compartilho meus projetos e habilidades na área de desenvolvimento! 🌟
 
@@ -6,31 +6,31 @@ Bem-vindo ao meu primeiro portfólio, onde compartilho meus projetos e habilidad
 
 ## 🚀 Funcionalidades Principais
 
-1. **Design Responsivo** 📱
+1. **Design Responsivo**
    - O portfólio é totalmente responsivo, ou seja, se adapta a diferentes tamanhos de tela, garantindo uma boa experiência tanto em dispositivos móveis quanto desktop.
 
-2. **Navegação Simples** 🔍
+2. **Navegação Simples**
    - A navegação é intuitiva e direta, com menus claros e fácil acesso às seções do portfólio.
    - Inclui links de acesso rápido para projetos, habilidades, e informações sobre mim.
 
-3. **Seção de Projetos** 💻
+3. **Seção de Projetos**
    - Apresenta os projetos que desenvolvi com uma breve descrição, tecnologias utilizadas e links para visualização e repositórios.
 
-4. **Layout Limpo e Moderno** 🎨
+4. **Layout Limpo e Moderno**
    - Design clean e agradável, utilizando boas práticas de UX/UI, inspirado em conceitos de design modernos.
 
-5. **Animações de Máquina de Escrever nos Subtítulos** ⌨️
+5. **Animações de Máquina de Escrever nos Subtítulos**
    - Cada título de seção possui uma animação de máquina de escrever, dando um efeito interativo e dinâmico à navegação do portfólio.
 
-6. **Ícones Interativos** ⚙️
+6. **Ícones Interativos** 
    - Ícones sociais e de contato, como GitHub, LinkedIn, com links para as minhas redes profissionais.
    - Utilização do Font Awesome para garantir um visual moderno e interativo.
 
-7. **Link para E-mail** 📧
+7. **Link para E-mail**
    - Inclui um link direto para o meu e-mail, facilitando o contato.
    - [Clique aqui para me enviar um e-mail!](https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá!)
 
-8. **Download do Currículo** 📄
+8. **Download do Currículo**
    - Há um link para baixar meu currículo em PDF, permitindo que você tenha acesso rápido ao meu histórico profissional.
    - [Clique aqui para baixar meu currículo!](https://drive.google.com/file/d/117lI3iaPqYYvgtx_no6aFALc-J1Da2uP/view?usp=sharing)
 
@@ -60,8 +60,8 @@ Bem-vindo ao meu primeiro portfólio, onde compartilho meus projetos e habilidad
 
 ## 🚧 Melhorias Futuras
 
-- Adicionar animações ao navegar entre as seções. ✨
-- Criar uma versão ainda mais otimizada para dispositivos móveis. 📱
+- Adicionar animações ao navegar entre as seções.
+- Criar uma sessão de tecnologias.
 - **Criar um modo noturno** para melhorar a experiência do usuário em ambientes com pouca luz. 🌙
 
 ---
