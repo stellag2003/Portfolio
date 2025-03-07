@@ -27,7 +27,7 @@ body {
 
 /* Para navegadores WebKit (Chrome, Edge e Safari) */
 ::-webkit-scrollbar {
-    width: 3px; /* Largura da barra de rolagem */
+    width: 5px; /* ou qualquer outro valor fixo */
 }
 
 ::-webkit-scrollbar-track {
@@ -43,7 +43,6 @@ body {
     background-color:var(--cor-titulos);
     border: 5px  /* Borda visível ao passar o mouse */
 }
-
 
 .cabecalho {
     padding: 1% 0% 0% 15%;
@@ -68,6 +67,10 @@ body {
     text-decoration: none;
 }
 
+.cabecalho_menu_link:hover{
+    text-decoration: underline;
+}
+
 .sidebar {
     position: fixed; /* Fixa a barra na tela */
     left: 0; /* Alinha na lateral esquerda */
@@ -88,16 +91,13 @@ body {
 }
 
 .icone{
-    font-size: 3.18rem;
+    font-size: 3rem;
     color:var(--cor-terciaria);   
-    
  }
  
  .icone:hover{
      color:var(--cor-titulos);
- 
  }
-
 
 .titulo-destaque {
     color: var(--cor-secundaria);
@@ -124,7 +124,7 @@ body {
 }
 
 .apresentacao_conteudo_titulo {
-    font-size: 4.50rem;
+    font-size: 4.18rem;
     font-family: var(--fonte-principal);
     padding: 0 9%; /* Reduzi o padding vertical para evitar empurrar o botão */
     text-align: center;
@@ -132,17 +132,17 @@ body {
 
 .star-icone{
     color: #FCD53F;
-    font-size: 5rem;
+    font-size: 4rem;
     margin-left: 2px;
 }
 
 
 /* Aplica a animação ao ícone da seta */
 .btn_flecha {
-    margin: 200% 0 50% 0;
+    margin: 260% 0 50% 0;
     animation: pular 1s infinite; /* Repete a animação infinitamente */
     margin-left: 8px; /* Espaçamento entre o texto e o ícone */
-    font-size: 3.5rem; /* Tamanho do ícone */
+    font-size: 3rem; /* Tamanho do ícone */
     color: var(--cor-secundaria);
 
 }
@@ -150,6 +150,7 @@ body {
 .apresentacao_links_sub {
     font-size: 2.43rem;
     color: var(--cor-titulos);
+    justify-content: center;
 }
 
 .apresentacao_conteudo_texto{
@@ -166,10 +167,12 @@ body {
     justify-content: center; /* Distribui os elementos */
 }
 
+
 .imagem {
     width: 25%;
     border-radius: 50%;
-    margin: 10px 0 30px 0;
+    margin-bottom: 5% ;
+
 }
 
 .apresentacao_links {
@@ -190,7 +193,7 @@ body {
     text-align: center;
     border-radius: 50px;
     border: 0.2em solid var(--cor-secundaria);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 23% 5% 23% 5%;
     text-decoration: none;
     color: var(--cor-terciaria);
@@ -209,34 +212,46 @@ h1 {
 }
 
 
+/* Estilo geral para o container */
 .conteiner-slider {
-    width: 80%; /* Ajuste conforme necessário */
-    max-width: 100%; /* Define um limite maior para acomodar 3 imagens */
+    width: 90%; /* Container maior */
+    max-width: 100%;
     overflow: hidden;
-    position: relative; /* Permite usar o 'top' para ajustar a posição */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    top: 30px; /* Adiciona a margem superior de 30px */
+    margin: 0 auto;
+    position: relative;
+    top: 30px;
+   
 }
 
-.conteiner-imagens {
+.imagens-clicaveis {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 14px; /* Espaço entre as imagens */
-    width: 100%; /* Garantir que o contêiner ocupe toda a largura disponível */
+    gap: 11px;
 }
 
-.slider {
+/* Aumenta apenas as imagens clicáveis */
+a img {
     display: block;
-    width: calc(33.33% - 50px); /* Ajustar para que a soma das larguras com o gap caiba na tela */
-    flex-shrink: 0;
+    border-radius: 8px; /* Borda arredondada (opcional) */
+    transition: transform 0.3s ease; /* Efeito de hover */
 }
 
+/* Efeito de hover */
+a:hover img {
+    transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
+}
 
-.slider:hover{
+/* Estilo para imagens não clicáveis */
+.imagens-clicaveis img:not(a img) {
+    width: calc((90% - (4)) / 3);
+    flex-shrink: 0;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.slider:hover {
     transform: scale(0.9);
     transition: transform 0.9s;
 }
-
 
 .on{
     opacity: 1;
@@ -248,6 +263,7 @@ h1 {
     border: none;
     background-color: transparent;
     color: var(--cor-secundaria);
+    margin-top: 30px;
 
 }
 
@@ -273,7 +289,7 @@ h1 {
     border-color:var(--cor-primaria);
     background-color: var(--cor-primaria);
     border-style: none;
-    margin: 10px 0 0 0;
+    margin-top: 10px;
 }
 
 
@@ -333,16 +349,32 @@ h1 {
     }
 
     .conteiner-slider {
-        width: 100%;
+        width: 90%;
+        max-width: 1200px;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+        top: 30px;
     }
-
-    .conteiner-imagens {
-        flex-direction: column;
+    
+    .imagens-clicaveis {
+        display: flex;
+        gap: 11px;
+        flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
     }
-
-    .slider {
-        width: 100%;
-        margin-bottom: 20px;
+    
+    /* Estilo para todas as imagens */
+    .imagens-clicaveis img {
+        flex: 1 1 calc(25% - 11px); /* 4 colunas por padrão */
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    /* Efeito de hover nas imagens clicáveis */
+    a:hover img {
+        transform: scale(1.1);
     }
 
     .btn-anterior, .btn-proximo {

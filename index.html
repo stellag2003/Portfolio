@@ -32,8 +32,11 @@
 
    <main class="apresentacao" id="inicio">
        <section class="apresentacao_conteudo">
-          <h1 class="apresentacao_conteudo_titulo">Olá, seja bem-vindo(a) <strong class="titulo-destaque">ao mundo de Stella!<i class="fas fa-star star-icone"></i>
-          </strong></h1>
+          <h1 class="apresentacao_conteudo_titulo">Olá, seja bem-vindo(a) 
+            <br> 
+            <strong class="titulo-destaque">ao mundo de Stella! <br> <i class="fas fa-star star-icone"></i>
+          </strong>
+        </h1>
           <div class="apresentacao_links">
             <a class="apresentacao_links_link" href="https://drive.google.com/file/d/117lI3iaPqYYvgtx_no6aFALc-J1Da2uP/view?usp=sharing" target="_blank">Baixar CV</a>
             <i class="fas fa-chevron-down btn_flecha"></i>
@@ -58,19 +61,33 @@
         </div>
     </section>
     
-
         <section id="projetos" >
             <h2 id="texto-projetos"  style="display: none;" class="apresentacao_links_sub projetos">Projetos</h2>
             <h3 id="texto3"></h3>
             <div class="conteiner-slider">
                 <div class="conteiner-imagens">
-                 <img src="assets/player_musica.png" alt="imagem player músicas" class="slider">
-                 <img src="assets/ice_cream_clicker.png" alt="imagem jogo" class="slider">
-                 <img src="assets/numero_secreto.png" alt="imagem jogo de adivinhar numeros" class="slider">
-                 <img src="assets/streaming.png" alt="imagem da tela de login de um streaming" class="slider">
-                 <img src="assets/amigo_secreto.png" alt="imagem sorteador de amigos" class="slider">
-               </div>
+                    <!-- Div para imagens clicáveis -->
+                    <div class="imagens-clicaveis">
+                        <a href="https://stellag2003.github.io/PlayerMusicas/" target="_blank">
+                            <img src="assets/player_musica.png" alt="imagem player músicas" class="slider">
+                        </a>
+                        <a href="https://stellag2003.github.io/AmigoSecreto/" target="_blank">
+                            <img src="assets/amigo_secreto.png" alt="imagem sorteador de amigos" class="slider">
+                        </a>
+                        <a href="https://stellag2003.github.io/AdivinheONumeroSecreto/" target="_blank">
+                            <img src="assets/numero_secreto.png" alt="imagem jogo de adivinhar numeros" class="slider">
+                        </a>
 
+                        <!-- Imagens não clicáveis -->
+                    <img src="assets/ice_cream_clicker.png" alt="imagem jogo" class="slider"> 
+                    <img src="assets/streaming.png" alt="imagem da tela de login de um streaming" class="slider">
+                    
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
                <div class="btn_bolhinhas">
                 <button class="btn-anterior">
                     <i class="fas fa-circle"></i>
@@ -116,7 +133,7 @@
    </main>
     
     <footer class="rodape">
-        <p>Desenvolvido por Stella Gonçalves | 2025</p>
+        <p>© Desenvolvido por Stella Gonçalves⭐</p>
     </footer>
     
     <script src="script.js" defer></script>
