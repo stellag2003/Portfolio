@@ -314,10 +314,10 @@ h1 {
         margin: 50% 0 0 0;
     }
 
-    .apresentacao_links_link {
+    /* .apresentacao_links_link {
         margin-left: 10px;
         font-size: 2rem;
-    }
+    } */
 
     .apresentacao_conteudo_flex {
         flex-direction: column-reverse;
@@ -333,7 +333,7 @@ h1 {
         font-size: 3.43rem;
     }
 
-    .conteiner-slider {
+    /* .conteiner-slider {
         width: 100%;
     }
 
@@ -344,7 +344,7 @@ h1 {
     .slider {
         width: 100%;
         margin-bottom: 20px;
-    }
+    } */
 
     .btn-anterior, .btn-proximo {
         display: none;
