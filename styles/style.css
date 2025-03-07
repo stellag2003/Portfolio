@@ -124,7 +124,7 @@ body {
 }
 
 .apresentacao_conteudo_titulo {
-    font-size: 5.43rem;
+    font-size: 4.50rem;
     font-family: var(--fonte-principal);
     padding: 0 9%; /* Reduzi o padding vertical para evitar empurrar o botão */
     text-align: center;
@@ -328,10 +328,9 @@ h1 {
         border-radius: 50%;
     }
 
-    /* .apresentacao_links_sub {
+    .apresentacao_links_sub {
         margin-bottom: 40px;
-        font-size: 3.43rem;
-    } */
+    }
 
     .conteiner-slider {
         width: 100%;
