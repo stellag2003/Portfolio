@@ -11,8 +11,10 @@ const gap = 10; // Espaço entre as imagens (definido no CSS)
 btnProximo.addEventListener("click", () => {
     if (index < totalImagens - imagensVisiveis) {
         index++;
+        conteiner.style.transition = "transform 0.8s ease-in-out"; // Adiciona a transição diretamente
         conteiner.style.transform = `translateX(-${index * (larguraImagem + gap)}px)`;
     }
+    
 });
 
 btnAnterior.addEventListener("click", () => {

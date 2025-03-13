@@ -148,9 +148,8 @@ body {
 }
 
 .apresentacao_links_sub {
-    font-size: 2.43rem;
+    font-size: 2.80rem;
     color: var(--cor-titulos);
-    justify-content: center;
 }
 
 .apresentacao_conteudo_texto{
@@ -214,13 +213,12 @@ h1 {
 
 /* Estilo geral para o container */
 .conteiner-slider {
-    width: 90%; /* Container maior */
-    max-width: 100%;
+    width: 77%; /* Container maior */
+    max-width: 90%;
     overflow: hidden;
     margin: 0 auto;
     position: relative;
     top: 30px;
-   
 }
 
 .imagens-clicaveis {
@@ -248,9 +246,13 @@ a:hover img {
     object-fit: cover;
 }
 
+.slider{
+    transition: transform 0.8s ease-in-out;
+}
+
 .slider:hover {
     transform: scale(0.9);
-    transition: transform 0.9s;
+    
 }
 
 .on{
@@ -277,13 +279,20 @@ a:hover img {
     display: flex;
     justify-content: center; /* Centraliza os botões horizontalmente */
     gap: 13px; /* Espaço entre os botões */
-    margin: 30px 0 100px 0;
+    margin: 30px 0 150px 0;
 }
 
 .btn_bolhinhas:hover{
     cursor: pointer;
 
 }
+
+.contatos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .btn_redes_sociais{
     border-color:var(--cor-primaria);
