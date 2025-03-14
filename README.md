@@ -74,7 +74,7 @@ Bem-vindo ao meu primeiro portfólio, onde compartilho meus projetos e habilidad
 
 ## Vídeo de Apresentação
 
-[Assista ao vídeo de introdução do meu portfólio](https://github.com/user-attachments/assets/3322bdd4-09d0-46e6-8286-11e4353f4588)
+[Assista ao vídeo de introdução do meu portfólio](https://github.com/stellag2003/Portfolio/blob/master/Grava%C3%A7%C3%A3o%20Portf%C3%B3lio.mp4)
 
 ---
 
