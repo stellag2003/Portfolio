@@ -230,7 +230,6 @@ h1 {
 a img {
     display: block;
     border-radius: 8px; /* Borda arredondada (opcional) */
-    transition: transform 0.3s ease; /* Efeito de hover */
 }
 
 /* Efeito de hover */
@@ -294,7 +293,7 @@ a:hover img {
 }
 
 
-.btn_redes_sociais{
+.btn_redes_sociais{ 
     border-color:var(--cor-primaria);
     background-color: var(--cor-primaria);
     border-style: none;
@@ -334,22 +333,20 @@ a:hover img {
     .cabecalho_menu {
         justify-content: center;
     }
+    .cabecalho_menu_link {
+        font-size: 2.3rem;
+    }
 
     .apresentacao_conteudo {
         margin: 50% 0 0 0;
     }
-
-    /* .apresentacao_links_link {
-        margin-left: 10px;
-        font-size: 2rem;
-    } */
 
     .apresentacao_conteudo_flex {
         flex-direction: column-reverse;
     }
 
     .imagem {
-        width: 30%;
+        width: 70%;
         border-radius: 50%;
     }
 
@@ -367,18 +364,11 @@ a:hover img {
     }
     
     .imagens-clicaveis {
-        display: flex;
-        gap: 11px;
-        flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
+        flex-wrap: wrap; /* Permite que as imagens se ajustem em múltiplas linhas se necessário */
     }
-    
-    /* Estilo para todas as imagens */
+
     .imagens-clicaveis img {
-        flex: 1 1 calc(25% - 11px); /* 4 colunas por padrão */
-        max-width: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-        transition: transform 0.3s ease;
+        width: 100%; /* Faz as imagens ocuparem 100% da largura disponível na tela */
     }
     
     /* Efeito de hover nas imagens clicáveis */
@@ -394,14 +384,6 @@ a:hover img {
         display: none;
     }
 
-    /* .icone {
-        font-size: 4.18rem;
-        color: var(--cor-terciaria);
-    } */
-
-    /* .cabecalho_menu_link {
-        font-size: 2.4rem;
-    } */
 }
 
 
