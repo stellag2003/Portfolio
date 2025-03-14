@@ -72,9 +72,3 @@ Bem-vindo ao meu primeiro portfólio, onde compartilho meus projetos e habilidad
 
 ---
 
-## Vídeo de Apresentação
-
-[Assista ao vídeo de introdução do meu portfólio](https://github.com/user-attachments/assets/3322bdd4-09d0-46e6-8286-11e4353f4588)
-
----
-
