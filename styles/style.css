@@ -139,7 +139,7 @@ body {
 
 /* Aplica a animação ao ícone da seta */
 .btn_flecha {
-    margin: 260% 0 50% 0;
+    margin: 220% 0 50% 0;
     animation: pular 1s infinite; /* Repete a animação infinitamente */
     margin-left: 8px; /* Espaçamento entre o texto e o ícone */
     font-size: 3rem; /* Tamanho do ícone */
