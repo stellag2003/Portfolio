@@ -60,7 +60,6 @@ Bem-vindo ao meu primeiro portfólio, onde compartilho meus projetos e habilidad
 
 ## 🚧 Melhorias Futuras
 
-- Adicionar animações ao navegar entre as seções.
 - Criar uma sessão de tecnologias.
 - **Criar um modo noturno** para melhorar a experiência do usuário em ambientes com pouca luz. 🌙
 
