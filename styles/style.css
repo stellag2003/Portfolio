@@ -23,6 +23,7 @@ body {
     background-color: var(--cor-primaria);
     color: var(--cor-terciaria);
     font-family: var(--fonte-principal);
+    overflow-x: hidden;
 }
 
 /* Para navegadores WebKit (Chrome, Edge e Safari) */
@@ -213,17 +214,27 @@ h1 {
 
 /* Estilo geral para o container */
 .conteiner-slider {
-    width: 77%; /* Container maior */
-    max-width: 90%;
-    overflow: hidden;
+    width: 80%;
+    max-width: 1000%;
+    overflow: hidden; /* Esconde as imagens que saem do container */
     margin: 0 auto;
     position: relative;
     top: 30px;
+    
 }
 
 .imagens-clicaveis {
     display: flex;
-    gap: 11px;
+    gap:15px;
+    width: calc((200% - 14%));
+   
+}
+
+.imagens-clicaveis img{
+    width: calc(700% / 10%);
+    flex-shrink: 0;
+    max-width: 1000%;
+    object-fit: cover;
 }
 
 /* Aumenta apenas as imagens clicáveis */
@@ -237,13 +248,8 @@ a:hover img {
     transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
 }
 
-/* Estilo para imagens não clicáveis */
-.imagens-clicaveis img:not(a img) {
-    width: calc((90% - (4)) / 3);
-    flex-shrink: 0;
-    max-width: 100%;
-    object-fit: cover;
-}
+
+
 
 .slider{
     transition: transform 0.8s ease-in-out;

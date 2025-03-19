@@ -6,7 +6,7 @@ let index = 0;
 const totalImagens = document.querySelectorAll(".slider").length;
 const imagensVisiveis = 3; // Corrigido para 3 imagens visíveis
 const larguraImagem = document.querySelector(".slider").clientWidth;
-const gap = 10; // Espaço entre as imagens (definido no CSS)
+const gap = 11; // Espaço entre as imagens (definido no CSS)
 
 btnProximo.addEventListener("click", () => {
     if (index < totalImagens - imagensVisiveis) {
