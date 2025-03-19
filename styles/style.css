@@ -276,6 +276,7 @@ a:hover img {
 
 .btn-proximo:hover, .btn-anterior:hover {
     color: var(--cor-titulos);
+    cursor: pointer;
    
  }
  
@@ -285,11 +286,6 @@ a:hover img {
     justify-content: center; /* Centraliza os botões horizontalmente */
     gap: 13px; /* Espaço entre os botões */
     margin: 30px 0 150px 0;
-}
-
-.btn_bolhinhas:hover{
-    cursor: pointer;
-
 }
 
 .contatos-container {
