@@ -213,7 +213,7 @@ h1 {
 
 /* Estilo geral para o container */
 .conteiner-slider {
-    width: 77%;
+    width: 85%;
     max-width: 100%;
     overflow: hidden; /* Esconde as imagens que saem do container */
     margin: 0 auto;
@@ -224,11 +224,10 @@ h1 {
 .imagens-clicaveis {
     display: flex;
     gap:0.4%;
-    width: calc((200% - 20%));
+    width: calc((230% - 60%));
 }
 
 .imagens-clicaveis img{
-    width: calc(100% / 10%);
     flex-shrink: 0;
     max-width: 100%;
     object-fit: cover;
