@@ -359,6 +359,7 @@ a:hover img {
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
     
     .imagens-clicaveis {
@@ -367,6 +368,7 @@ a:hover img {
         justify-content: center; /* Centraliza as imagens */
         align-items: center; /* Mantém alinhado verticalmente */
         width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
+        
     }
     
     .imagens-clicaveis img {
@@ -375,6 +377,7 @@ a:hover img {
         height: auto; /* Mantém a proporção original */
         display: block; /* Remove espaços extras abaixo da imagem */
         object-fit: contain; /* Garante que a imagem inteira seja visível sem cortes */
+        margin-bottom: 10%;
     }
     
     /* Efeito de hover nas imagens clicáveis */
