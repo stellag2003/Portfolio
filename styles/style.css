@@ -211,29 +211,26 @@ h1 {
     font-weight: bold;
 }
 
-
 /* Estilo geral para o container */
 .conteiner-slider {
-    width: 80%;
-    max-width: 1000%;
+    width: 77%;
+    max-width: 100%;
     overflow: hidden; /* Esconde as imagens que saem do container */
     margin: 0 auto;
     position: relative;
     top: 30px;
-    
 }
 
 .imagens-clicaveis {
     display: flex;
-    gap:15px;
-    width: calc((200% - 14%));
-   
+    gap:0.4%;
+    width: calc((200% - 20%));
 }
 
 .imagens-clicaveis img{
-    width: calc(700% / 10%);
+    width: calc(100% / 10%);
     flex-shrink: 0;
-    max-width: 1000%;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -247,9 +244,6 @@ a img {
 a:hover img {
     transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
 }
-
-
-
 
 .slider{
     transition: transform 0.8s ease-in-out;
@@ -271,7 +265,6 @@ a:hover img {
     background-color: transparent;
     color: var(--cor-secundaria);
     margin-top: 30px;
-
 }
 
 .btn-proximo:hover, .btn-anterior:hover {
@@ -328,6 +321,7 @@ a:hover img {
 }
 
 @media (max-width: 1200px) {
+
     .cabecalho {
         padding: 1%;
     }
@@ -348,7 +342,7 @@ a:hover img {
     }
 
     .imagem {
-        width: 70%;
+        width: 60%;
         border-radius: 50%;
     }
 
@@ -357,20 +351,31 @@ a:hover img {
     }
 
     .conteiner-slider {
-        width: 90%;
+        width: 90%; /* Garante um bom ajuste em telas menores */
         max-width: 1200px;
-        overflow: hidden;
         margin: 0 auto;
         position: relative;
         top: 30px;
+        overflow: hidden; /* Evita que a imagem ultrapasse os limites */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .imagens-clicaveis {
-        flex-wrap: wrap; /* Permite que as imagens se ajustem em múltiplas linhas se necessário */
+        display: flex;
+        flex-wrap: wrap; /* Permite que as imagens se ajustem corretamente */
+        justify-content: center; /* Centraliza as imagens */
+        align-items: center; /* Mantém alinhado verticalmente */
+        width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
     }
-
+    
     .imagens-clicaveis img {
-        width: 100%; /* Faz as imagens ocuparem 100% da largura disponível na tela */
+        width: auto; /* Evita distorção */
+        max-width: 100%; /* Ajusta dentro do contêiner */
+        height: auto; /* Mantém a proporção original */
+        display: block; /* Remove espaços extras abaixo da imagem */
+        object-fit: contain; /* Garante que a imagem inteira seja visível sem cortes */
     }
     
     /* Efeito de hover nas imagens clicáveis */
