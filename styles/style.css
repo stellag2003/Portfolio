@@ -167,7 +167,6 @@ body {
     justify-content: center; /* Distribui os elementos */
 }
 
-
 .imagem {
     width: 25%;
     border-radius: 50%;
@@ -224,7 +223,7 @@ h1 {
 .imagens-clicaveis {
     display: flex;
     gap:0.4%;
-    width: calc((230% - 60%));
+    width: calc((930% - 200%));
 }
 
 .imagens-clicaveis img{
@@ -270,7 +269,7 @@ a:hover img {
     color: var(--cor-titulos);
     cursor: pointer;
    
- }
+}
  
 
 .btn_bolhinhas{
@@ -285,7 +284,6 @@ a:hover img {
     flex-direction: column;
     align-items: center;
 }
-
 
 .btn_redes_sociais{ 
     border-color:var(--cor-primaria);
@@ -359,7 +357,6 @@ a:hover img {
         display: flex;
         justify-content: center;
         align-items: center;
-        
     }
     
     .imagens-clicaveis {
@@ -368,7 +365,6 @@ a:hover img {
         justify-content: center; /* Centraliza as imagens */
         align-items: center; /* Mantém alinhado verticalmente */
         width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
-        
     }
     
     .imagens-clicaveis img {
