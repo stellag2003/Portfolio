@@ -69,7 +69,7 @@ body {
 }
 
 .cabecalho_menu_link:hover{
-    text-decoration: underline;
+    color:var(--cor-terciaria);
 }
 
 .sidebar {
