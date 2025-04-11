@@ -455,7 +455,7 @@ a:hover img {
       }
     
       .tooltip img {
-        width: 140px; /* mesmo tamanho que acima */
+        width: 80px; /* mesmo tamanho que acima */
       }
     
       .tooltip-text {
