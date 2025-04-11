@@ -381,7 +381,7 @@ a:hover img {
         justify-content: center;
     }
     .cabecalho_menu_link {
-        font-size: 1.7rem;
+        font-size: 1.1rem;
     }
 
     .apresentacao_conteudo {
@@ -399,6 +399,7 @@ a:hover img {
 
     .apresentacao_links_sub {
         margin-bottom: 40px;
+        display: block;
     }
 
     .conteiner-slider {
