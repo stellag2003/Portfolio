@@ -279,7 +279,7 @@ a:hover img {
     margin-bottom:150px;
 }
 
-.contatos-container,.habilidades-container {
+.contatos-container,.habilidades-container, .projetos-container, .sobre-container {
     display: flex;
     flex-direction: column;
     align-items: center;
