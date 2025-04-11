@@ -446,7 +446,7 @@ a:hover img {
 
     .icons {
         gap: 30px;
-        margin: 2% 10% 5% 10%; /* margem mais enxuta */
+        margin: 2% 10% 20% 10%; /* margem mais enxuta */
       }
     
       .icons img {
@@ -465,6 +465,15 @@ a:hover img {
         bottom: 110%; /* aproxima a tooltip */
       }
 
+      .rodape {
+        padding: 1%;
+        color: var(--cor-titulos);
+        background-color: #BAE5F0;
+        text-align: center;
+        font-family: var(--fonte-principal);
+        font-size: 1.5rem;
+        margin-top: 10%;
+    }
     
 
 }
