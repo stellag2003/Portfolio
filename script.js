@@ -67,10 +67,12 @@ function observarSecoes() {
     const sobreSection = document.getElementById('sobre');
     const contatosSection = document.getElementById('contatos');
     const projetosSection = document.getElementById('projetos');
+    const habilidadesSection = document.getElementById('habilidades');
 
     if (sobreSection) observer.observe(sobreSection);
     if (contatosSection) observer.observe(contatosSection);
     if (projetosSection) observer.observe(projetosSection);
+    if (habilidadesSection) observer.observe(habilidadesSection);
 }
 
 // Inicia a observação das seções quando a página carrega

@@ -262,7 +262,7 @@ a:hover img {
     border: none;
     background-color: transparent;
     color: var(--cor-secundaria);
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 .btn-proximo:hover, .btn-anterior:hover {
@@ -276,10 +276,10 @@ a:hover img {
     display: flex;
     justify-content: center; /* Centraliza os botões horizontalmente */
     gap: 13px; /* Espaço entre os botões */
-    margin: 30px 0 150px 0;
+    margin-bottom:150px;
 }
 
-.contatos-container {
+.contatos-container,.habilidades-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -291,6 +291,60 @@ a:hover img {
     border-style: none;
     margin-top: 10px;
 }
+
+.icons img{
+    border: 0.2em solid var(--cor-secundaria);
+    border-radius: 30%;
+    padding: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.icons img:hover{
+    transform: scale(1.1);
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+    margin: 2% 20% 5% 20%;
+   
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .tooltip img {
+    width:100px;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    background-color: var(--cor-terciaria);
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    padding: 6px 10px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
 
 
 /* Animação seta */
@@ -314,7 +368,7 @@ a:hover img {
     text-align: center;
     font-family: var(--fonte-principal);
     font-size: 1.5rem;
-    margin-top: 4%;
+    margin-top: 3%;
 }
 
 @media (max-width: 1200px) {
@@ -388,6 +442,29 @@ a:hover img {
     .sidebar{
         display: none;
     }
+
+    .icons {
+        gap: 30px;
+        margin: 2% 10% 5% 10%; /* margem mais enxuta */
+      }
+    
+      .icons img {
+        width: 80px; /* reduz um pouco o tamanho do ícone */
+        padding: 8px;
+        border: 0.18em solid var(--cor-secundaria);
+      }
+    
+      .tooltip img {
+        width: 140px; /* mesmo tamanho que acima */
+      }
+    
+      .tooltip-text {
+        font-size: 13px;
+        padding: 5px 8px;
+        bottom: 110%; /* aproxima a tooltip */
+      }
+
+    
 
 }
 
