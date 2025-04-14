@@ -60,7 +60,7 @@ function observarSecoes() {
             }
         });
     }, {
-        threshold: 0.1 // Dispara a animação quando 50% da seção estiver visível
+        threshold: 0.01 // Dispara a animação quando 50% da seção estiver visível
     });
 
     // Observa as seções "sobre", "contatos" e "projetos"
