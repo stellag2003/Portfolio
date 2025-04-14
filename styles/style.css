@@ -388,6 +388,17 @@ a:hover img {
         margin: 50% 0 0 0;
     }
 
+    .apresentacao_conteudo_titulo {
+        font-size: 3.18rem;
+    }
+
+    .apresentacao_conteudo_texto{
+        margin: 0 10px 120px 10px;
+        font-size: 1.50rem;
+
+
+    }
+
     .apresentacao_conteudo_flex {
         flex-direction: column-reverse;
     }
@@ -399,6 +410,7 @@ a:hover img {
 
     .apresentacao_links_sub {
         margin-bottom: 40px;
+        font-size: 1.9rem;
     }
 
     .conteiner-slider {
