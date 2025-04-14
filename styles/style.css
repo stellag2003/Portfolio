@@ -399,7 +399,6 @@ a:hover img {
 
     .apresentacao_links_sub {
         margin-bottom: 40px;
-        display: block;
     }
 
     .conteiner-slider {
@@ -465,6 +464,9 @@ a:hover img {
         bottom: 110%; /* aproxima a tooltip */
       }
 
+      .btn_redes_sociais{
+        margin-top: 1px;
+    }
       .rodape {
         padding: 1%;
         color: var(--cor-titulos);
