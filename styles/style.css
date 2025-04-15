@@ -435,8 +435,8 @@ a:hover img {
         flex-wrap: wrap; /* Permite que as imagens se ajustem corretamente */
         justify-content: center; /* Centraliza as imagens */
         align-items: center; /* Mantém alinhado verticalmente */
-        width: 80%; /* Garante que o contêiner ocupe toda a largura disponível */
-        margin-left: 30px;
+        width: 70%; /* Garante que o contêiner ocupe toda a largura disponível */
+        margin-left: 20px;
     }
     
     .imagens-clicaveis img {
