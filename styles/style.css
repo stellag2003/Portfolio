@@ -9,9 +9,7 @@
 
     --fonte-principal: "Josefin Sans", sans-serif;
     --fonte-secundaria: "Bree Serif", serif;
-
 }
-
 
 * {
     margin: 0;
@@ -26,9 +24,8 @@ body {
     overflow-x: hidden;
 }
 
-/* Para navegadores WebKit (Chrome, Edge e Safari) */
 ::-webkit-scrollbar {
-    width: 5px; /* ou qualquer outro valor fixo */
+    width: 5px; 
 }
 
 ::-webkit-scrollbar-track {
@@ -36,23 +33,23 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--cor-secundaria); /* Cor do "botão" da barra */
+    background: var(--cor-secundaria); 
     border-radius: 30px; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background-color:var(--cor-titulos);
-    border: 5px  /* Borda visível ao passar o mouse */
+    border: 5px; 
 }
 
 .cabecalho {
-    position: fixed; /* Fixa o cabeçalho na tela */
-    top: 0; /* Gruda no topo */
-    left: 0; /* Alinha à esquerda */
-    width: 100%; /* Ocupa toda a largura */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
     background-color:var(--cor-cabecalho); 
-    padding: 1% 15%; /* Mantém o espaçamento */
-    z-index: 1000; /* Garante que fique acima dos outros elementos */
+    padding: 1% 15%; 
+    z-index: 1000; 
 }
 
 .cabecalho_menu {
@@ -72,16 +69,16 @@ body {
 }
 
 .sidebar {
-    position: fixed; /* Fixa a barra na tela */
-    left: 0; /* Alinha na lateral esquerda */
-    top: 50%; /* Posiciona no meio da tela */
-    transform: translateY(-50%); /* Ajusta a posição vertical */
+    position: fixed; 
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-50%);
     display: flex;
-    flex-direction: column; /* Deixa os ícones na vertical */
-    gap: 15px; /* Espaço entre os ícones */
+    flex-direction: column; 
+    gap: 15px; 
     background-color: var(--cor-cabecalho);
     padding: 1%;
-    border-radius: 0 10px 10px 0; /* Borda arredondada só do lado direito */
+    border-radius: 0 10px 10px 0; 
 }
 
 .sidebar a {
@@ -92,23 +89,23 @@ body {
 
 .icone{
     font-size: 3rem;
-    color:var(--cor-terciaria);   
- }
+    color:var(--cor-terciaria);  
+}
  
- .icone:hover{
-     color:var(--cor-titulos);
- }
+.icone:hover{
+    color:var(--cor-titulos);
+}
 
 .titulo-destaque {
     color: var(--cor-secundaria);
 }
 
 .apresentacao {
-    width: 100%; /* Garante que ocupe toda a largura */
+    width: 100%; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centraliza tudo verticalmente */
+    justify-content: center; 
     text-align: center;
     gap: 82px;
 }
@@ -118,7 +115,7 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Garante que os elementos fiquem no centro */
+    justify-content: center; 
     align-items: center;
     gap: 6px;
 }
@@ -126,7 +123,7 @@ body {
 .apresentacao_conteudo_titulo {
     font-size: 4.18rem;
     font-family: var(--fonte-principal);
-    padding: 0 9%; /* Reduzi o padding vertical para evitar empurrar o botão */
+    padding: 0 9%; 
     text-align: center;
 }
 
@@ -137,14 +134,12 @@ body {
 }
 
 
-/* Aplica a animação ao ícone da seta */
 .btn_flecha {
     margin: 220% 0 50% 0;
-    animation: pular 1s infinite; /* Repete a animação infinitamente */
-    margin-left: 8px; /* Espaçamento entre o texto e o ícone */
-    font-size: 3rem; /* Tamanho do ícone */
+    animation: pular 1s infinite; 
+    margin-left: 8px; 
+    font-size: 3rem; 
     color: var(--cor-secundaria);
-
 }
 
 .apresentacao_links_sub {
@@ -162,15 +157,14 @@ body {
 
 .apresentacao_conteudo_flex {
     display: flex;
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Distribui os elementos */
+    align-items: center; 
+    justify-content: center; 
 }
 
 .imagem {
     width: 25%;
     border-radius: 50%;
     margin-bottom: 5% ;
-
 }
 
 .apresentacao_links {
@@ -201,84 +195,89 @@ body {
 
 .apresentacao_links_link:hover {
     background-color: var(--cor-secundaria);
-   
 }
-
 
 h1 {
     font-weight: bold;
 }
 
-/* Estilo geral para o container */
-.conteiner-slider {
-    width: 85%;
-    max-width: 100%;
-    overflow: hidden; /* Esconde as imagens que saem do container */
-    margin: 0 auto;
-    position: relative;
-    top: 30px;
+.projetos-container-wrapper {
+    position: relative; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
-.imagens-clicaveis {
-    display: flex;
-    gap:0.4%;
-    width: calc((930% - 200%));
-}
-
-.imagens-clicaveis img{
-    flex-shrink: 0;
-    max-width: 100%;
-    object-fit: cover;
-}
-
-/* Aumenta apenas as imagens clicáveis */
-a img {
-    display: block;
-    border-radius: 8px; /* Borda arredondada (opcional) */
-}
-
-/* Efeito de hover */
-a:hover img {
-    transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
-}
-
-.slider{
-    transition: transform 0.8s ease-in-out;
-}
-
-.slider:hover {
-    transform: scale(0.9);
-    
-}
-
-.on{
-    opacity: 1;
-
-}
-
-.btn-proximo, .btn-anterior{
-    font-size: 0.8rem;
-    border: none;
-    background-color: transparent;
-    color: var(--cor-secundaria);
-    margin-top: 5px;
-}
-
-.btn-proximo:hover, .btn-anterior:hover {
-    color: var(--cor-titulos);
-    cursor: pointer;
+.projetos-swiper {
+    width: 300%; 
+    padding: 20px 0;
    
 }
- 
 
-.btn_bolhinhas{
-    display: flex;
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    gap: 13px; /* Espaço entre os botões */
-    margin-bottom:150px;
+.swiper-slide {
+  width: calc(100% / 3 - 20px); 
+  margin-right: 10px;
+  flex-shrink: 0;
+  height: auto;
+  transition: transform 0.5s ease;
+
 }
 
-.contatos-container,.habilidades-container, .projetos-container, .sobre-container {
+.swiper-slide:hover {
+  transform: scale(0.95); 
+}
+
+.swiper-img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    width: 50px; 
+    height: 50px; 
+    background: rgba(255, 255, 255, 0.9); /* Um pouco mais sólido */
+    border-radius: 50%;
+    color: var(--cor-terciaria);
+    transition: all 0.3s ease;
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+}
+
+.swiper-button-prev {
+    left: -110px; 
+}
+
+.swiper-button-next {
+    right: -110px; 
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.contatos-container, .habilidades-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -309,20 +308,20 @@ a:hover img {
     gap: 45px;
     flex-wrap: wrap;
     margin: 2% 20% 5% 20%;
-   
+    
 }
 
 .tooltip {
     position: relative;
     display: inline-block;
     cursor: pointer;
-  }
-  
-  .tooltip img {
+}
+ 
+.tooltip img {
     width:100px;
-  }
-  
-  .tooltip-text {
+}
+ 
+.tooltip-text {
     visibility: hidden;
     background-color: var(--cor-terciaria);
     color: #fff;
@@ -338,27 +337,25 @@ a:hover img {
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
-  }
-  
-  .tooltip:hover .tooltip-text {
+}
+ 
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
-  }
-
-
-/* Animação seta */
-@keyframes pular {
-    0% {
-        transform: translateY(0); /* Posição inicial */
-    }
-    50% {
-        transform: translateY(-10px); /* Move a flecha para cima */
-    }
-    100% {
-        transform: translateY(0); /* Volta à posição inicial */
-    }
 }
 
+
+@keyframes pular {
+    0% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
 .rodape {
     padding: 1%;
@@ -369,6 +366,7 @@ a:hover img {
     font-size: 1.5rem;
     margin-top: 3%;
 }
+
 
 @media (max-width: 1200px) {
 
@@ -394,8 +392,6 @@ a:hover img {
     .apresentacao_conteudo_texto{
         margin: 0 10px 120px 10px;
         font-size: 1.90rem;
-
-
     }
 
     .apresentacao_conteudo_flex {
@@ -409,81 +405,42 @@ a:hover img {
 
     .apresentacao_links_link{
         font-size: 1.3rem;
-        
     }
 
     .apresentacao_links_sub {
         margin-bottom: 40px;
         font-size: 2.2rem;
     }
-
-    .conteiner-slider {
-        width: 90%; /* Garante um bom ajuste em telas menores */
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        top: 30px;
-        overflow: hidden; /* Evita que a imagem ultrapasse os limites */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     
-    .imagens-clicaveis {
-        display: flex;
-        flex-wrap: wrap; /* Permite que as imagens se ajustem corretamente */
-        justify-content: center; /* Centraliza as imagens */
-        align-items: center; /* Mantém alinhado verticalmente */
-        width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
-    }
-    
-    .imagens-clicaveis img {
-        width: auto; /* Evita distorção */
-        max-width: 100%; /* Ajusta dentro do contêiner */
-        height: auto; /* Mantém a proporção original */
-        display: block; /* Remove espaços extras abaixo da imagem */
-        object-fit: contain; /* Garante que a imagem inteira seja visível sem cortes */
-        margin-bottom: 10%;
-    }
-    
-    /* Efeito de hover nas imagens clicáveis */
-    a:hover img {
-        transform: scale(1.1);
-    }
-
-    .btn-anterior, .btn-proximo {
-        display: none;
-    }
-
     .sidebar{
-        display: none;
+        display: none; /* Oculta a sidebar em telas menores */
     }
 
     .icons {
         gap: 30px;
         margin: 2% 10% 20% 10%; /* margem mais enxuta */
-      }
+    }
     
-      .icons img {
+    .icons img {
         width: 80px; /* reduz um pouco o tamanho do ícone */
         padding: 8px;
         border: 0.18em solid var(--cor-secundaria);
-      }
+    }
     
-      .tooltip img {
+    .tooltip img {
         width: 70px; /* mesmo tamanho que acima */
-      }
+    }
     
-      .tooltip-text {
+    .tooltip-text {
         font-size: 13px;
         padding: 5px 8px;
         bottom: 110%; /* aproxima a tooltip */
-      }
+    }
 
-      .btn_redes_sociais{
+    .btn_redes_sociais{
         margin-top: 1px;
     }
-      .rodape {
+    .rodape {
         padding: 1%;
         color: var(--cor-titulos);
         background-color: #BAE5F0;
@@ -492,8 +449,122 @@ a:hover img {
         font-size: 1.5rem;
         margin-top: 10%;
     }
-    
 
+     .projetos-container-wrapper {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    
+    .projetos-swiper {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .swiper-button-next, 
+    .swiper-button-prev {
+        position: static;
+        margin: 10px auto;
+        width: 45px;
+        height: 45px;
+    }
 }
 
+@media (max-width: 768px) {
+    .apresentacao_conteudo {
+        width: 90%; /* Ocupa mais largura em telas menores */
+        margin-top: 30%; /* Ajuste a margem superior se necessário */
+    }
 
+    .apresentacao_conteudo_titulo {
+        font-size: 2.5rem; /* Menor em telas pequenas */
+    }
+
+    .apresentacao_conteudo_texto {
+        font-size: 1.5rem;
+        margin: 0 5% 80px 5%; /* Ajuste de margem */
+        width: 90%;
+    }
+
+    .imagem {
+        width: 80%; /* Aumenta a imagem em telas menores */
+    }
+
+    .apresentacao_links_link {
+        width: 80%; /* Botão de CV mais largo */
+        padding: 15% 5% 15% 5%; /* Ajuste de padding para o botão de CV */
+    }
+
+    .icons {
+        gap: 20px;
+        margin: 5% 5% 20% 5%;
+    }
+
+    .icons img {
+        width: 60px; /* Ícones ainda menores */
+        padding: 5px;
+    }
+
+    .tooltip img {
+        width: 50px;
+    }
+
+    .tooltip-text {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+
+    .projetos-container-wrapper {
+        padding: 0 5px; /* Reduz um pouco o padding em telas ainda menores */
+    }
+
+    .projetos-swiper {
+        overflow: visible !important;
+        height: auto !important;
+    }
+    
+    .swiper-wrapper {
+        flex-direction: column !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+        gap: 20px;
+    }
+    
+    .swiper-slide {
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .apresentacao_conteudo_titulo {
+        font-size: 2rem;
+    }
+    .apresentacao_conteudo_texto {
+        font-size: 1.2rem;
+        margin-bottom: 50px;
+    }
+
+     .projetos-container-wrapper {
+        padding: 0 5px;
+    }
+
+   .projetos-swiper {
+        padding: 5px 0;
+    }
+    
+    .swiper-button-next, 
+    .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .swiper-slide {
+        width: 90%; 
+    }
+}

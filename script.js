@@ -1,80 +1,103 @@
-const conteiner = document.querySelector('.conteiner-imagens');
-const btnProximo = document.querySelector('.btn-proximo');
-const btnAnterior = document.querySelector('.btn-anterior');
-
-let index = 0;
-const totalImagens = document.querySelectorAll(".slider").length;
-const imagensVisiveis = 3; // Corrigido para 3 imagens visíveis
-const larguraImagem = document.querySelector(".slider").clientWidth;
-const gap = 11; // Espaço entre as imagens (definido no CSS)
-
-btnProximo.addEventListener("click", () => {
-    if (index < totalImagens - imagensVisiveis) {
-        index++;
-        conteiner.style.transition = "transform 0.8s ease-in-out"; // Adiciona a transição diretamente
-        conteiner.style.transform = `translateX(-${index * (larguraImagem + gap)}px)`;
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      const swiper = new Swiper('.projetos-swiper', {
+    autoHeight: true,
+    loop: true,
+    // Remova slidesPerView e slidesPerGroup da configuração principal
+    // Eles serão definidos nos breakpoints
+    spaceBetween: 20, // Valor padrão (menor)
+    centeredSlides: false,
     
-});
-
-btnAnterior.addEventListener("click", () => {
-    if (index > 0) {
-        index--;
-        conteiner.style.transform = `translateX(-${index * (larguraImagem + gap)}px)`;
-    }
-});
-
-
-// Função de máquina de escrever
-function typeWriter(element, text, speed) {
-    let i = 0;
-    element.style.display = 'block'; // Exibe o elemento
-    element.innerHTML = ''; // Limpa o conteúdo
-
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        } else {
-            element.style.borderRight = 'none'; // Remove o cursor quando termina
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    
+    breakpoints: {
+        // Mobile pequeno (0-479px)
+        0: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 15
+        },
+        // Mobile grande (480-767px)
+        480: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20
+        },
+        // Tablet (768-1023px)
+        768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 25
+        },
+        // Desktop pequeno (1024-1199px)
+        1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 2,
+            spaceBetween: 30
+        },
+        // Desktop grande (1200px+)
+        1200: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 40
         }
-    }
-    type();
-}
-
-// Função para observar as seções e disparar a animação
-function observarSecoes() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const targetId = entry.target.id; // Pega o ID da seção visível
-                const textElement = document.querySelector(`#texto-${targetId}`); // Encontra o título correspondente
-
-                if (textElement) {
-                    const text = textElement.textContent || textElement.innerText; // Pega o texto do título
-                    typeWriter(textElement, text, 100); // Inicia a animação
-                }
-
-                observer.unobserve(entry.target); // Para de observar após a animação ser disparada
-            }
+      }     
         });
-    }, {
-        threshold: 0.01 // Dispara a animação quando 50% da seção estiver visível
-    });
 
-    // Observa as seções "sobre", "contatos" e "projetos"
-    const sobreSection = document.getElementById('sobre');
-    const contatosSection = document.getElementById('contatos');
-    const projetosSection = document.getElementById('projetos');
-    const habilidadesSection = document.getElementById('habilidades');
+        console.log("Swiper inicializado com sucesso para .projetos-swiper!");
 
-    if (sobreSection) observer.observe(sobreSection);
-    if (contatosSection) observer.observe(contatosSection);
-    if (projetosSection) observer.observe(projetosSection);
-    if (habilidadesSection) observer.observe(habilidadesSection);
-}
+    } else {
+        console.error("Erro: Swiper não está definido. A biblioteca Swiper.js pode não ter carregado corretamente.");
+    }
 
-// Inicia a observação das seções quando a página carrega
-document.addEventListener('DOMContentLoaded', observarSecoes);
+    
+    function typeWriter(element, text, speed) {
+        let i = 0;
+        element.style.display = 'block';
+        element.innerHTML = ''; 
 
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            } else {
+                element.style.borderRight = 'none'; 
+            }
+        }
+        type();
+    }
+
+    function observarSecoes() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const targetId = entry.target.id;
+                    const textElement = document.querySelector(`#texto-${targetId}`);
+
+                    if (textElement) {
+                        const originalText = textElement.getAttribute('data-original-text');
+                        if (!originalText) {
+                            textElement.setAttribute('data-original-text', textElement.textContent || textElement.innerText);
+                        }
+                        typeWriter(textElement, originalText || textElement.textContent || textElement.innerText, 100);
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.01 
+        });
+
+        const sections = ['sobre', 'contatos', 'projetos', 'habilidades'];
+        sections.forEach(section => {
+            const element = document.getElementById(section);
+            if (element) observer.observe(element);
+        });
+    }
+
+    observarSecoes();
+});
