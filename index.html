@@ -1,246 +1,643 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Stella Gonçalves</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='gold' d='M256 16l73 148 163 24-118 115 28 163-146-77-146 77 28-163L20 188l163-24z'/></svg>">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stella Gonçalves | Desenvolvedora Full Stack</title>
+<meta name="description" content="Portfólio de Stella Gonçalves, desenvolvedora Full Stack: projetos em React, TypeScript, Node.js e SQL.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Josefin+Sans:wght@400;600;700&display=swap">
+<style>
+  :root {
+    --noite: #141a2e;
+    --superficie: #1c2440;
+    --borda: #2c3659;
+    --texto: #ece8f4;
+    --texto-suave: #a7aecb;
+    --azul: #a9bcff;
+    --rosa: #f59ad8;
+    --dourado: #fcd53f;
+
+    --display: "Josefin Sans", "Century Gothic", "Futura", sans-serif;
+    --corpo: "Bree Serif", Georgia, serif;
+
+    /* Escala tipográfica (razão ~1.25) */
+    --t-0: 0.875rem;
+    --t-1: 1rem;
+    --t-2: 1.2rem;
+    --t-3: 1.5rem;
+    --t-4: clamp(1.8rem, 3.2vw, 2.3rem);
+    --t-5: clamp(2.9rem, 8.5vw, 5.8rem);
+
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    margin: 0;
+    background: var(--noite);
+    color: var(--texto);
+    font-family: var(--corpo);
+    font-size: var(--t-1);
+    line-height: 1.65;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--azul); }
+  :focus-visible { outline: 3px solid var(--dourado); outline-offset: 3px; border-radius: 4px; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 40px);
+  }
+
+  /* ---------- Cabeçalho ---------- */
+  .topo {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: color-mix(in srgb, var(--noite) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--borda);
+  }
+  .topo .container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+  .marca {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: var(--t-2);
+    color: var(--texto);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .marca svg { width: 14px; height: 14px; fill: var(--dourado); }
+  .menu { display: flex; gap: 20px; margin-left: auto; padding-right: 28px; margin-right: 4px; border-right: 1px solid var(--borda); }
+  .menu a {
+    font-family: var(--display);
+    font-size: var(--t-1);
+    color: var(--texto-suave);
+    text-decoration: none;
+    padding-block: 4px;
+  }
+  .menu a:hover { color: var(--texto); }
+
+  .idioma {
+    display: flex;
+    padding: 3px;
+    border: 1.5px solid var(--borda);
+    border-radius: 999px;
+    background: none;
+    cursor: pointer;
+    font-family: var(--display);
+  }
+  .idioma span {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: var(--t-0);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--texto-suave);
+  }
+  .idioma span.ativo { background: var(--rosa); color: var(--noite); }
+
+  /* ---------- Hero ---------- */
+  .hero .container {
+    padding-block: clamp(56px, 10vw, 120px) clamp(48px, 8vw, 96px);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: var(--t-5);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  .hero .papel {
+    font-family: var(--display);
+    font-size: var(--t-3);
+    color: var(--rosa);
+    margin: 0 0 16px;
+  }
+  .hero .frase {
+    font-size: var(--t-2);
+    color: var(--texto-suave);
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+  .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: var(--t-1);
+    text-decoration: none;
+    line-height: 1.2;
+  }
+  .botao-principal { background: var(--rosa); color: var(--noite); }
+  .botao-principal:hover { background: #f8b4e2; }
+  .botao-secundario { border: 1.5px solid var(--azul); color: var(--azul); }
+  .botao-secundario:hover { background: color-mix(in srgb, var(--azul) 12%, transparent); }
+
+
+  /* ---------- Céu de fundo (estrelas espalhadas pelo site) ---------- */
+  body { position: relative; }
+  .ceu { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+  .ceu i, .ceu svg { position: absolute; width: var(--t); height: var(--t); opacity: var(--o); }
+  .ceu i { border-radius: 50%; background: var(--texto); }
+  .ceu svg { fill: var(--c); }
+  @media (prefers-reduced-motion: no-preference) {
+    .ceu i, .ceu svg { animation: piscar var(--dur) ease-in-out var(--d) infinite; }
+  }
+  @keyframes piscar { 50% { opacity: calc(var(--o) * 0.2); } }
+
+  /* ---------- Seções ---------- */
+  section.bloco { padding-block: clamp(48px, 8vw, 88px); border-top: 1px solid var(--borda); }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: var(--t-4);
+    color: var(--rosa);
+    margin: 0 0 32px;
+    line-height: 1.1;
+  }
+
+  /* Sobre */
+  .sobre {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 56px);
+    align-items: start;
+  }
+  /* No site real, aqui entra a foto (assets/eu.jpg) */
+  .sobre .foto {
+    width: 200px; aspect-ratio: 1; border-radius: 50%;
+    object-fit: cover;
+    background: var(--superficie); border: 1.5px solid var(--borda);
+    font-family: var(--display); font-weight: 700; font-size: 4rem; color: var(--rosa);
+  }
+  .sobre p { font-size: var(--t-2); line-height: 1.7; max-width: 62ch; margin: 0 0 1em; }
+  .sobre p:last-child { margin-bottom: 0; }
+
+  /* Projetos */
+  .projetos { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; }
+  .projeto {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    background: var(--superficie);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .projeto.destaque { grid-column: span 3; border: 1px solid var(--borda); }
+  .projeto .print { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; width: 100%; }
+  .projeto.antigo .print { aspect-ratio: 477 / 280; }
+  .projeto .corpo { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px 22px; flex: 1; }
+  .projeto h3 { font-family: var(--display); font-size: var(--t-3); font-weight: 700; margin: 0; line-height: 1.15; }
+  .projeto:not(.destaque) h3 { font-size: var(--t-2); }
+  .projeto p { margin: 0; color: var(--texto-suave); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 4px 0 0; }
+  .tags li {
+    font-family: var(--display);
+    font-size: var(--t-0);
+    color: var(--azul);
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    padding: 3px 10px 1px;
+  }
+  .links { display: flex; gap: 18px; margin-top: auto; padding-top: 8px; }
+  .links a { font-family: var(--display); font-weight: 600; font-size: var(--t-1); text-underline-offset: 4px; }
+  .links a:hover { color: var(--rosa); }
+
+  /* Habilidades */
+  .grupos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
+  .grupo h3 {
+    font-family: var(--display);
+    font-size: var(--t-2);
+    font-weight: 600;
+    color: var(--texto);
+    margin: 0 0 14px;
+  }
+  .grupo ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .grupo li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px 7px 8px;
+    background: var(--superficie);
+    border-radius: 10px;
+    font-family: var(--display);
+    font-size: var(--t-1);
+  }
+  .grupo li img { width: 26px; height: 26px; }
+
+  /* Contato */
+  .contato {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: clamp(32px, 6vw, 72px);
+    align-items: start;
+  }
+  .contato .chamada { font-size: var(--t-2); color: var(--texto-suave); max-width: 36ch; margin: 0; }
+
+  .cartao-contato {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: clamp(22px, 4vw, 34px);
+  }
+  .rotulo {
+    display: block;
+    font-family: var(--display);
+    font-size: var(--t-0);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+    margin: 0 0 10px;
+  }
+  .email { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+  .email a {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+    line-height: 1.2;
+    color: var(--texto);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+  .email a:hover { color: var(--rosa); }
+  .copiar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--display);
+    font-size: var(--t-0);
+    font-weight: 600;
+    background: none;
+    color: var(--azul);
+    border: 1.5px solid var(--azul);
+    border-radius: 999px;
+    padding: 6px 14px 5px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .copiar:hover { background: color-mix(in srgb, var(--azul) 12%, transparent); }
+  .copiar svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .copiar.copiado { background: var(--azul); color: var(--noite); }
+  .grupo-redes { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--borda); }
+  .redes { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  footer {
+    border-top: 1px solid var(--borda);
+    padding-block: 24px;
+    color: var(--texto-suave);
+    font-size: var(--t-0);
+    font-family: var(--display);
+  }
+
+  /* ---------- Responsivo ---------- */
+  @media (max-width: 860px) {
+    .projetos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .projeto, .projeto.destaque { grid-column: span 1; }
+    .projeto.destaque { grid-column: span 2; }
+    .contato { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .menu { order: 3; width: 100%; margin: 0; gap: 18px; overflow-x: auto; padding: 0 0 10px; border-right: 0; }
+    .idioma { margin-left: auto; }
+    .sobre { grid-template-columns: minmax(0, 1fr); }
+    .sobre .foto { width: 140px; font-size: 3rem; }
+    .projetos { grid-template-columns: minmax(0, 1fr); }
+    .projeto, .projeto.destaque { grid-column: span 1; }
+    .grupos { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
+
 </head>
 <body>
-    <header class="cabecalho">
-        <div class="cabecalho_conteudo">
-            <button class="cabecalho_hamburguer" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="brilho" viewBox="-10 -10 20 20"><path d="M0-10 2.2-2.2 10 0 2.2 2.2 0 10-2.2 2.2-10 0-2.2-2.2Z"/></symbol>
+</svg>
+<div class="ceu" aria-hidden="true"></div>
 
-            <nav class="cabecalho_menu" id="menu-principal">
-                <a class="cabecalho_menu_link" href="#sobre" data-i18n="menuSobre">Sobre mim</a>
-                <a class="cabecalho_menu_link" href="#projetos" data-i18n="menuProjetos">Projetos</a>
-                <a class="cabecalho_menu_link" href="#habilidades" data-i18n="menuHabilidades">Habilidades</a>
-                <a class="cabecalho_menu_link" href="#contatos" data-i18n="menuContatos">Contatos</a>
-            </nav>
+<header class="topo">
+  <div class="container">
+    <a class="marca" href="#inicio"><svg><use href="#brilho"/></svg>Stella</a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#sobre" data-en="About">Sobre</a>
+      <a href="#projetos" data-en="Projects">Projetos</a>
+      <a href="#habilidades" data-en="Skills">Habilidades</a>
+      <a href="#contato" data-en="Contact">Contato</a>
+    </nav>
+    <button class="idioma" type="button" aria-label="Switch to English">
+      <span class="ativo" data-lang="pt">PT</span><span data-lang="en">EN</span>
+    </button>
+  </div>
+</header>
 
-            <button class="btn_idioma" type="button" aria-label="Switch to English" data-i18n-aria="botaoIdioma">
-                <span class="btn_idioma_opcao" data-idioma="pt">PT</span>
-                <span class="btn_idioma_opcao" data-idioma="en">EN</span>
-            </button>
+<main id="inicio">
+  <section class="hero">
+    <div class="container">
+      <div>
+        <h1>Stella Gonçalves</h1>
+        <p class="papel" data-en="Full Stack Developer">Desenvolvedora Full Stack</p>
+        <p class="frase" data-en="I love turning ideas into complete projects, taking care of everything from the database to the last detail of the interface. I work with Node.js and React, always looking to bring together technology, creativity and functionality in what I build.">Gosto de transformar ideias em projetos completos, cuidando desde o banco de dados até o último detalhe da interface. Trabalho com Node.js e React, sempre buscando unir tecnologia, criatividade e funcionalidade no que desenvolvo.</p>
+        <div class="acoes">
+          <a class="botao botao-principal" href="#projetos" data-en="See projects">Ver projetos</a>
+          <a class="botao botao-secundario" href="assets/CV_Stella_Goncalves_Mendonca_Developer_Jr.pdf" data-en-href="assets/Resume_Stella_Goncalves_Mendonca_Developer_Jr.pdf" target="_blank" rel="noopener" data-en="Download CV">Baixar CV</a>
         </div>
-    </header>
+      </div>
 
-    <aside class="sidebar">
-        <a href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin icone"></i>
-        </a>
-        <a href="https://github.com/stellag2003" target="_blank" rel="noopener" aria-label="GitHub">
-            <i class="fa-brands fa-github icone"></i>
-        </a>
-        <a href="https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?" data-i18n-href="linkEmail" target="_blank" rel="noopener" aria-label="E-mail">
-            <i class="fa-solid fa-envelope icone"></i>
-        </a>
-    </aside>
+    </div>
+  </section>
 
-    <main class="apresentacao" id="inicio">
-        <section class="apresentacao_conteudo">
-            <h1 class="apresentacao_conteudo_titulo" data-i18n="titulo">Olá, seja bem-vindo(a)
-                <br>
-                <strong class="titulo-destaque">ao mundo de Stella! <br> <i class="fas fa-star star-icone"></i></strong>
-            </h1>
-            <div class="apresentacao_links">
-                <a class="apresentacao_links_link" href="assets/CV_Stella_Goncalves_Mendonca_Developer_Jr.pdf" target="_blank" data-i18n="baixarCv" data-i18n-href="linkCv">Baixar CV</a>
-                <a href="#sobre" class="btn_flecha" aria-label="Ir para Sobre mim" data-i18n-aria="irParaSobre">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
+  <section class="bloco" id="sobre">
+    <div class="container">
+      <h2 data-en="About me">Sobre mim</h2>
+      <div class="sobre">
+        <img class="foto" src="assets/eu.jpg" alt="Foto de Stella Gonçalves" data-en-alt="Photo of Stella Gonçalves">
+        <div>
+          <p data-en="Hi! I'm Stella, I'm 23 years old and I'm a Full Stack developer. I'm currently studying Systems Analysis and Development and I'm always looking to learn and grow in the tech field.">Oi! Eu sou a Stella, tenho 23 anos e sou desenvolvedora Full Stack. Atualmente, curso Análise e Desenvolvimento de Sistemas e estou sempre buscando aprender e evoluir na área de tecnologia.</p>
+          <p data-en="I like turning ideas into projects, trying out new technologies and combining programming with creativity. My goal is to keep growing as a developer and to work on projects that challenge me.">Gosto de transformar ideias em projetos, testar tecnologias novas e unir programação com criatividade. Meu objetivo é continuar crescendo como desenvolvedora e trabalhar em projetos que me desafiem.</p>
+          <p data-en="Outside of code, I enjoy music, games, movies, TV shows, books and, of course, spending time with my dogs.">Fora do código, gosto de música, jogos, filmes, séries, livros e, claro, de passar tempo com meus cachorros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="projetos">
+    <div class="container">
+      <h2 data-en="Projects">Projetos</h2>
+      <div class="projetos">
+        <article class="projeto destaque">
+          <img class="print" src="assets/topo_devflow.png" alt="Tela de login do DevFlow" data-en-alt="DevFlow login screen">
+          <div class="corpo">
+            <h3>DevFlow</h3>
+            <p data-en="A Pomodoro timer that plays like an RPG: every minute of focus earns XP, and XP unlocks legendary mentors like Ada Lovelace and Alan Turing.">Um Pomodoro que joga como RPG: cada minuto de foco rende XP, e o XP desbloqueia mentores lendários como Ada Lovelace e Alan Turing.</p>
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>Vite</li><li>Axios</li></ul>
+            <div class="links">
+              <a href="https://stellag2003.github.io/DevFlow/" target="_blank" rel="noopener" data-en="View site">Ver site</a>
+              <a href="https://github.com/stellag2003/DevFlow" target="_blank" rel="noopener" data-en="View code">Ver código</a>
             </div>
-        </section>
+          </div>
+        </article>
 
-        <section id="sobre" class="secao">
-            <h2 id="texto-sobre" class="apresentacao_links_sub" data-i18n-titulo="tituloSobre">Sobre Mim</h2>
-            <div class="apresentacao_conteudo_flex">
-                <div class="apresentacao_conteudo_texto" data-i18n="textoSobre">
-                    <p>Oi! Eu sou a Stella, tenho 23 anos e sou <strong class="titulo-destaque">desenvolvedora Full Stack</strong>. Curso <strong class="titulo-destaque">Análise e Desenvolvimento de Sistemas</strong> e gosto de transformar ideias em algo que realmente funciona, sem deixar de lado o visual e a criatividade. Estou sempre aprendendo algo novo e busco projetos que me desafiem a evoluir.</p>
-                    <p>Fora da programação, curto <strong class="titulo-destaque">música, jogos, filmes, séries e livros</strong>, e sou apaixonada pelos meus <strong class="titulo-destaque">cachorros</strong>. Acho que tudo isso aparece no meu jeito de trabalhar: <strong class="titulo-destaque">curiosa, criativa e sempre querendo descobrir coisas novas</strong>.</p>
-                </div>
-
-                <img src="assets/eu.jpg" alt="Foto de Stella Gonçalves" class="imagem" data-i18n-alt="fotoStella">
+        <article class="projeto destaque">
+          <img class="print" src="assets/topo_todo.png" alt="Tela do QG de Missões" data-en-alt="Mission HQ screen">
+          <div class="corpo">
+            <h3 data-en="Mission HQ">QG de Missões</h3>
+            <p data-en="Your tasks become superhero missions. The back end runs on Node.js and Express, with Sequelize saving every mission to SQLite, so you can create, edit and delete them.">Suas tarefas viram missões de super-herói. O back-end roda em Node.js e Express, com o Sequelize salvando cada missão em SQLite: dá para criar, editar e excluir.</p>
+            <ul class="tags"><li>Node.js</li><li>Express</li><li>Sequelize</li><li>SQLite</li></ul>
+            <div class="links">
+              <a href="https://stellag2003.github.io/MiniProjeto_M3/" target="_blank" rel="noopener" data-en="View site">Ver site</a>
+              <a href="https://github.com/stellag2003/MiniProjeto_M3" target="_blank" rel="noopener" data-en="View code">Ver código</a>
             </div>
-        </section>
+          </div>
+        </article>
 
-        <section id="projetos" class="secao">
-            <h2 id="texto-projetos" class="apresentacao_links_sub" data-i18n-titulo="tituloProjetos">Projetos</h2>
-
-            <div class="projetos-container-wrapper">
-                <button class="swiper-button-prev projetos-prev" type="button" aria-label="Projeto anterior" data-i18n-aria="projetoAnterior"></button>
-
-                <div class="swiper projetos-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="https://stellag2003.github.io/DevFlow/" target="_blank" rel="noopener">
-                                <img src="assets/dev_flow.png" data-card="dev_flow.png" alt="Projeto DevFlow" data-i18n-alt="altDevflow" class="swiper-img" loading="lazy">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="https://stellag2003.github.io/MiniProjeto_M3/" target="_blank" rel="noopener">
-                                <img src="assets/todo_list.png" data-card="todo_list.png" alt="Projeto QG de Missões (To-Do List)" data-i18n-alt="altTodo" class="swiper-img" loading="lazy">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="https://stellag2003.github.io/AmigoSecreto/" target="_blank" rel="noopener">
-                                <img src="assets/amigo_secreto.png" data-card="amigo_secreto.png" alt="Projeto Amigo Secreto" data-i18n-alt="altAmigo" class="swiper-img" loading="lazy">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="https://stellag2003.github.io/PlayerMusicas/" target="_blank" rel="noopener">
-                                <img src="assets/player_musica.png" data-card="player_musica.png" alt="Projeto Player de Músicas" data-i18n-alt="altPlayer" class="swiper-img" loading="lazy">
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="https://stellag2003.github.io/presente-para-o-amor-da-minha-vida/" target="_blank" rel="noopener">
-                                <img src="assets/presente_namorados.png" data-card="presente_namorados.png" alt="Projeto Presente" data-i18n-alt="altPresente" class="swiper-img" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-pagination projetos-paginacao"></div>
-                </div>
-
-                <button class="swiper-button-next projetos-next" type="button" aria-label="Próximo projeto" data-i18n-aria="proximoProjeto"></button>
+        <article class="projeto antigo">
+          <img class="print" src="assets/presente_namorados.png" alt="Tela do Presente Digital" data-en-alt="Digital Gift screen">
+          <div class="corpo">
+            <h3 data-en="Digital Gift">Presente Digital</h3>
+            <p data-en="My first freelance job: a declaration of love with photos, music and a memory game, delivered as a QR Code to be scanned and opened.">Meu primeiro freela: uma declaração de amor com fotos, música e jogo da memória, entregue como um QR Code para ser escaneado e aberto.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="links">
+              <a href="https://stellag2003.github.io/presente-para-o-amor-da-minha-vida/" target="_blank" rel="noopener" data-en="View site">Ver site</a>
+              <a href="https://github.com/stellag2003/presente-para-o-amor-da-minha-vida" target="_blank" rel="noopener" data-en="View code">Ver código</a>
             </div>
-        </section>
+          </div>
+        </article>
 
-        <section id="habilidades" class="secao">
-            <h2 id="texto-habilidades" class="apresentacao_links_sub" data-i18n-titulo="tituloHabilidades">Habilidades</h2>
-
-            <div class="icons">
-                <div class="tooltip">
-                    <img src="assets/java_icone.svg" alt="Java">
-                    <span class="tooltip-text">Java</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/cSharp_icone.svg" alt="C#">
-                    <span class="tooltip-text">C#</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/php_icone.svg" alt="PHP">
-                    <span class="tooltip-text">PHP</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/laravel_icone.svg" alt="Laravel">
-                    <span class="tooltip-text">Laravel</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/python_icone.svg" alt="Python">
-                    <span class="tooltip-text">Python</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/html_icone.svg" alt="HTML">
-                    <span class="tooltip-text">HTML</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/css_icone.svg" alt="CSS">
-                    <span class="tooltip-text">CSS</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/bootstrap_icone.svg" alt="Bootstrap">
-                    <span class="tooltip-text">Bootstrap</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/javascript_icone.svg" alt="JavaScript">
-                    <span class="tooltip-text">JavaScript</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/typescript_icone.svg" alt="TypeScript">
-                    <span class="tooltip-text">TypeScript</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/jquery_icone.svg" alt="JQuery">
-                    <span class="tooltip-text">JQuery</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/react_icone.svg" alt="React">
-                    <span class="tooltip-text">React</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/nodejs_icone.svg" alt="Node.js">
-                    <span class="tooltip-text">Node.js</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/git_icone.svg" alt="Git">
-                    <span class="tooltip-text">Git</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/github_icone.svg" alt="GitHub">
-                    <span class="tooltip-text">GitHub</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/linux_icone.svg" alt="Linux">
-                    <span class="tooltip-text">Linux</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/canva_icone.svg" alt="Canva">
-                    <span class="tooltip-text">Canva</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/figma_icone.svg" alt="Figma">
-                    <span class="tooltip-text">Figma</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/mysql_icone.svg" alt="MySQL">
-                    <span class="tooltip-text">MySQL</span>
-                </div>
-
-                <div class="tooltip">
-                    <img src="assets/postgresql_icone.svg" alt="PostgreSQL">
-                    <span class="tooltip-text">PostgreSQL</span>
-                </div>
+        <article class="projeto antigo">
+          <img class="print" src="assets/amigo_secreto.png" alt="Tela do Amigo Secreto" data-en-alt="Secret Santa screen">
+          <div class="corpo">
+            <h3 data-en="Secret Santa">Amigo Secreto</h3>
+            <p data-en="No more slips of paper in a bowl: add the names and the draw happens instantly.">Chega de papelzinho no pote: adicione os nomes e o sorteio sai na hora.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="links">
+              <a href="https://stellag2003.github.io/AmigoSecreto/" target="_blank" rel="noopener" data-en="View site">Ver site</a>
+              <a href="https://github.com/stellag2003/AmigoSecreto" target="_blank" rel="noopener" data-en="View code">Ver código</a>
             </div>
-        </section>
+          </div>
+        </article>
 
-        <section id="contatos" class="secao">
-            <h2 id="texto-contatos" class="apresentacao_links_sub" data-i18n-titulo="tituloContatos">Contatos</h2>
-            <div class="icones">
-                <a class="btn_redes_sociais" href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin icone"></i>
-                </a>
-                <a class="btn_redes_sociais" href="https://github.com/stellag2003" target="_blank" rel="noopener" aria-label="GitHub">
-                    <i class="fa-brands fa-github icone"></i>
-                </a>
-                <a class="btn_redes_sociais" href="https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?" data-i18n-href="linkEmail" target="_blank" rel="noopener" aria-label="E-mail">
-                    <i class="fa-solid fa-envelope icone"></i>
-                </a>
+        <article class="projeto antigo">
+          <img class="print" src="assets/player_musica.png" alt="Tela do Player de Músicas" data-en-alt="Music Player screen">
+          <div class="corpo">
+            <h3 data-en="Music Player">Player de Músicas</h3>
+            <p data-en="Where it all began: my first web project, with play/pause, track switching and a clickable timeline, in plain JavaScript.">Onde tudo começou: meu primeiro projeto web, com play/pause, troca de faixa e linha do tempo clicável, em JavaScript puro.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="links">
+              <a href="https://stellag2003.github.io/PlayerMusicas/" target="_blank" rel="noopener" data-en="View site">Ver site</a>
+              <a href="https://github.com/stellag2003/PlayerMusicas" target="_blank" rel="noopener" data-en="View code">Ver código</a>
             </div>
-        </section>
-    </main>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <footer class="rodape">
-        <p data-i18n="rodape">© Desenvolvido por Stella Gonçalves⭐</p>
-    </footer>
+  <section class="bloco" id="habilidades">
+    <div class="container">
+      <h2 data-en="Skills">Habilidades</h2>
+      <div class="grupos">
+        <div class="grupo">
+          <h3>Front-end</h3>
+          <ul>
+            <li><img src="assets/html_icone.svg" alt="">HTML</li>
+            <li><img src="assets/css_icone.svg" alt="">CSS</li>
+            <li><img src="assets/javascript_icone.svg" alt="">JavaScript</li>
+            <li><img src="assets/typescript_icone.svg" alt="">TypeScript</li>
+            <li><img src="assets/react_icone.svg" alt="">React</li>
+            <li><img src="assets/bootstrap_icone.svg" alt="">Bootstrap</li>
+            <li><img src="assets/jquery_icone.svg" alt="">jQuery</li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3>Back-end</h3>
+          <ul>
+            <li><img src="assets/nodejs_icone.svg" alt="">Node.js</li>
+            <li><img src="assets/php_icone.svg" alt="">PHP</li>
+            <li><img src="assets/laravel_icone.svg" alt="">Laravel</li>
+            <li><img src="assets/java_icone.svg" alt="">Java</li>
+            <li><img src="assets/cSharp_icone.svg" alt="">C#</li>
+            <li><img src="assets/python_icone.svg" alt="">Python</li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3 data-en="Databases">Banco de dados</h3>
+          <ul>
+            <li><img src="assets/mysql_icone.svg" alt="">MySQL</li>
+            <li><img src="assets/postgresql_icone.svg" alt="">PostgreSQL</li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3 data-en="Tools">Ferramentas</h3>
+          <ul>
+            <li><img src="assets/git_icone.svg" alt="">Git</li>
+            <li><img src="assets/github_icone.svg" alt="">GitHub</li>
+            <li><img src="assets/linux_icone.svg" alt="">Linux</li>
+            <li><img src="assets/figma_icone.svg" alt="">Figma</li>
+            <li><img src="assets/canva_icone.svg" alt="">Canva</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+  <section class="bloco" id="contato">
+    <div class="container">
+      <h2 data-en="Let's talk?">Vamos conversar?</h2>
+      <div class="contato">
+        <div>
+          <p class="chamada" data-en="I'm looking for my next developer role, and I take freelance work too. Tell me by email what you have in mind.">Estou em busca da minha próxima vaga como desenvolvedora e também pego freelas. Me conta por e-mail o que você tem em mente.</p>
+        </div>
+
+        <div class="cartao-contato">
+          <span class="rotulo">E-mail</span>
+          <div class="email">
+            <a id="email" href="mailto:stellagmendonca@gmail.com">stellagmendonca@gmail.com</a>
+            <button class="copiar" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+              <span aria-live="polite" data-en="Copy">Copiar</span>
+            </button>
+          </div>
+
+          <div class="grupo-redes">
+            <span class="rotulo" data-en="Elsewhere">Também estou em</span>
+            <div class="redes">
+              <a class="botao botao-secundario" href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="botao botao-secundario" href="https://github.com/stellag2003" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" data-en="Developed by Stella Gonçalves">Desenvolvido por Stella Gonçalves</div>
+</footer>
+
+<script>
+  // Troca PT/EN: guarda o texto original e usa data-en para o inglês
+  (function () {
+    const botao = document.querySelector('.idioma');
+    const itens = document.querySelectorAll('[data-en]');
+    const imagens = document.querySelectorAll('[data-en-alt]');
+    const links = document.querySelectorAll('[data-en-href]');
+    itens.forEach(el => { el.dataset.pt = el.textContent; });
+    imagens.forEach(el => { el.dataset.ptAlt = el.alt; });
+    links.forEach(el => { el.dataset.ptHref = el.getAttribute('href'); });
+    let idioma = 'pt';
+
+    botao.addEventListener('click', () => {
+      idioma = idioma === 'pt' ? 'en' : 'pt';
+      itens.forEach(el => { el.textContent = idioma === 'en' ? el.dataset.en : el.dataset.pt; });
+      imagens.forEach(el => { el.alt = idioma === 'en' ? el.dataset.enAlt : el.dataset.ptAlt; });
+      links.forEach(el => { el.setAttribute('href', idioma === 'en' ? el.dataset.enHref : el.dataset.ptHref); });
+      document.documentElement.lang = idioma === 'en' ? 'en' : 'pt-BR';
+      botao.setAttribute('aria-label', idioma === 'en' ? 'Mudar para português' : 'Switch to English');
+      botao.querySelectorAll('span').forEach(s => s.classList.toggle('ativo', s.dataset.lang === idioma));
+    });
+
+    const copiar = document.querySelector('.copiar');
+    const aviso = copiar.querySelector('span');
+    let espera;
+    copiar.addEventListener('click', () => {
+      const texto = document.getElementById('email').textContent;
+      const feito = () => {
+        aviso.textContent = idioma === 'en' ? 'Copied!' : 'Copiado!';
+        copiar.classList.add('copiado');
+        clearTimeout(espera);
+        espera = setTimeout(() => {
+          aviso.textContent = idioma === 'en' ? aviso.dataset.en : aviso.dataset.pt;
+          copiar.classList.remove('copiado');
+        }, 1800);
+      };
+      navigator.clipboard.writeText(texto).then(feito).catch(() => {
+        const r = document.createRange();
+        r.selectNodeContents(document.getElementById('email'));
+        const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      });
+    });
+  })();
+  // Céu de fundo: estrelas espalhadas pela página (semente fixa = sempre o mesmo céu)
+  (function () {
+    const ceu = document.querySelector('.ceu');
+    let semente = 20031;
+    const aleatorio = () => {
+      semente = (semente * 1664525 + 1013904223) % 4294967296;
+      return semente / 4294967296;
+    };
+    const area = document.body.scrollWidth * document.body.scrollHeight;
+    const cores = ['var(--dourado)', 'var(--dourado)', 'var(--rosa)', 'var(--azul)'];
+    // Brilhos maiores ficam nas bordas para não cair em cima do texto
+    const pos = (el, nasBordas) => {
+      const x = aleatorio() * 100;
+      el.style.left = (nasBordas ? (x < 50 ? x * 0.24 : 76 + (x - 50) * 0.48) : x).toFixed(2) + '%';
+      el.style.top = (aleatorio() * 100).toFixed(2) + '%';
+      el.style.setProperty('--dur', (3 + aleatorio() * 4).toFixed(1) + 's');
+      el.style.setProperty('--d', (-aleatorio() * 6).toFixed(1) + 's');
+      ceu.appendChild(el);
+    };
+
+    for (let n = Math.round(area / 9000); n > 0; n--) {
+      const ponto = document.createElement('i');
+      ponto.style.setProperty('--t', (1 + aleatorio() * 1.6).toFixed(1) + 'px');
+      ponto.style.setProperty('--o', (0.2 + aleatorio() * 0.4).toFixed(2));
+      pos(ponto);
+    }
+    for (let n = Math.round(area / 70000); n > 0; n--) {
+      const brilho = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      brilho.innerHTML = '<use href="#brilho"/>';
+      brilho.style.setProperty('--t', Math.round(7 + aleatorio() * 9) + 'px');
+      brilho.style.setProperty('--o', (0.35 + aleatorio() * 0.4).toFixed(2));
+      brilho.style.setProperty('--c', cores[Math.floor(aleatorio() * cores.length)]);
+      pos(brilho, true);
+    }
+
+    // Aglomerado extra no espaço vazio à direita do topo (só em telas largas)
+    const hero = document.querySelector('.hero');
+    if (window.innerWidth > 860) {
+      const alturaPagina = document.body.scrollHeight;
+      const noTopo = el => {
+        el.style.left = (55 + aleatorio() * 40).toFixed(2) + '%';
+        el.style.top = ((hero.offsetTop + (0.08 + aleatorio() * 0.84) * hero.offsetHeight) / alturaPagina * 100).toFixed(2) + '%';
+        el.style.setProperty('--dur', (3 + aleatorio() * 4).toFixed(1) + 's');
+        el.style.setProperty('--d', (-aleatorio() * 6).toFixed(1) + 's');
+        ceu.appendChild(el);
+      };
+      for (let n = 0; n < 60; n++) {
+        const ponto = document.createElement('i');
+        ponto.style.setProperty('--t', (1 + aleatorio() * 2).toFixed(1) + 'px');
+        ponto.style.setProperty('--o', (0.25 + aleatorio() * 0.5).toFixed(2));
+        noTopo(ponto);
+      }
+      for (let n = 0; n < 16; n++) {
+        const brilho = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        brilho.innerHTML = '<use href="#brilho"/>';
+        brilho.style.setProperty('--t', Math.round(8 + aleatorio() * 14) + 'px');
+        brilho.style.setProperty('--o', (0.45 + aleatorio() * 0.5).toFixed(2));
+        brilho.style.setProperty('--c', cores[Math.floor(aleatorio() * cores.length)]);
+        noTopo(brilho);
+      }
+    }
+  })();
+</script>
+
 </body>
 </html>
