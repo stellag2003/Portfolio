@@ -1,238 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles/style.css">
     <title>Portfólio Stella Gonçalves</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='gold' d='M256 16l73 148 163 24-118 115 28 163-146-77-146 77 28-163L20 188l163-24z'/></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-<body class="dark-mode">
+<body>
     <header class="cabecalho">
-      <nav class="cabecalho_menu"> 
-          <a class="cabecalho_menu_link" href="#sobre">Sobre mim</a>
-          <a class="cabecalho_menu_link" href="#projetos">Projetos</a>
-          <a class="cabecalho_menu_link" href="#habilidades">Habilidades</a>
-          <a class="cabecalho_menu_link" href="#contatos">Contatos</a>
-          
-      </nav>
+        <div class="cabecalho_conteudo">
+            <button class="cabecalho_hamburguer" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="cabecalho_menu" id="menu-principal">
+                <a class="cabecalho_menu_link" href="#sobre" data-i18n="menuSobre">Sobre mim</a>
+                <a class="cabecalho_menu_link" href="#projetos" data-i18n="menuProjetos">Projetos</a>
+                <a class="cabecalho_menu_link" href="#habilidades" data-i18n="menuHabilidades">Habilidades</a>
+                <a class="cabecalho_menu_link" href="#contatos" data-i18n="menuContatos">Contatos</a>
+            </nav>
+
+            <button class="btn_idioma" type="button" aria-label="Switch to English" data-i18n-aria="botaoIdioma">
+                <span class="btn_idioma_opcao" data-idioma="pt">PT</span>
+                <span class="btn_idioma_opcao" data-idioma="en">EN</span>
+            </button>
+        </div>
     </header>
-    <div class="container">
+
     <aside class="sidebar">
-        <a href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank">
+        <a href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin icone"></i>
         </a>
-        <a href="https://github.com/stellag2003" target="_blank">
+        <a href="https://github.com/stellag2003" target="_blank" rel="noopener" aria-label="GitHub">
             <i class="fa-brands fa-github icone"></i>
         </a>
-        <a href="https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?" target="_blank">
+        <a href="https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?" data-i18n-href="linkEmail" target="_blank" rel="noopener" aria-label="E-mail">
             <i class="fa-solid fa-envelope icone"></i>
         </a>
     </aside>
 
-   <main class="apresentacao" id="inicio">
+    <main class="apresentacao" id="inicio">
         <section class="apresentacao_conteudo">
-           <h1 class="apresentacao_conteudo_titulo">Olá, seja bem-vindo(a) 
-             <br> 
-             <strong class="titulo-destaque">ao mundo de Stella! <br> <i class="fas fa-star star-icone"></i>
-           </strong>
-         </h1>
-           <div class="apresentacao_links">
-             <a class="apresentacao_links_link" href="assets/Currículo.pdf" target="_blank">Baixar CV</a>
-             <i class="fas fa-chevron-down btn_flecha"></i>
-           </div>
+            <h1 class="apresentacao_conteudo_titulo" data-i18n="titulo">Olá, seja bem-vindo(a)
+                <br>
+                <strong class="titulo-destaque">ao mundo de Stella! <br> <i class="fas fa-star star-icone"></i></strong>
+            </h1>
+            <div class="apresentacao_links">
+                <a class="apresentacao_links_link" href="assets/CV_Stella_Goncalves_Mendonca_Developer_Jr.pdf" target="_blank" data-i18n="baixarCv" data-i18n-href="linkCv">Baixar CV</a>
+                <a href="#sobre" class="btn_flecha" aria-label="Ir para Sobre mim" data-i18n-aria="irParaSobre">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
         </section>
 
-        <section id="sobre">
-        <h2 id="texto-sobre" style="display: none;" class="apresentacao_links_sub sobre_mim">Sobre Mim</h2>
-        <div class="apresentacao_conteudo_flex">
-          
-            <p class="apresentacao_conteudo_texto">
-              Oi! Eu sou a Stella Gonçalves, tenho 22 anos e sou <strong class="titulo-destaque">desenvolvedora FullStack</strong>, apaixonada por tecnologia, design e tudo o que envolve criatividade.
-              Atualmente curso <strong class="titulo-destaque">Engenharia de Software</strong> e trabalho como desenvolvedora, criando projetos que misturam um visual bonito com funcionalidade. 
-              Amo aprender coisas novas, testar ideias e transformar códigos em experiências legais.
-              Meu maior objetivo é usar a <strong class="titulo-destaque">tecnologia como ferramenta de impacto</strong>, sempre com um toque de criatividade.
-              Fora das telas, sou fã de uma boa <strong class="titulo-destaque">música</strong>, não resisto à companhia dos meus <strong class="titulo-destaque">cachorros</strong>, 
-              e adoro mergulhar em <strong class="titulo-destaque">filmes, séries e livros</strong> que me fazem viajar sem sair do lugar.
-            </p>
+        <section id="sobre" class="secao">
+            <h2 id="texto-sobre" class="apresentacao_links_sub" data-i18n-titulo="tituloSobre">Sobre Mim</h2>
+            <div class="apresentacao_conteudo_flex">
+                <div class="apresentacao_conteudo_texto" data-i18n="textoSobre">
+                    <p>Oi! Eu sou a Stella, tenho 23 anos e sou <strong class="titulo-destaque">desenvolvedora Full Stack</strong>. Curso <strong class="titulo-destaque">Análise e Desenvolvimento de Sistemas</strong> e gosto de transformar ideias em algo que realmente funciona, sem deixar de lado o visual e a criatividade. Estou sempre aprendendo algo novo e busco projetos que me desafiem a evoluir.</p>
+                    <p>Fora da programação, curto <strong class="titulo-destaque">música, jogos, filmes, séries e livros</strong>, e sou apaixonada pelos meus <strong class="titulo-destaque">cachorros</strong>. Acho que tudo isso aparece no meu jeito de trabalhar: <strong class="titulo-destaque">curiosa, criativa e sempre querendo descobrir coisas novas</strong>.</p>
+                </div>
 
-            <img src="assets/eu.jpg" alt="Foto de uma mulher de 22 anos" class="imagem">
-        </div>
-    </section>
-    
-      <section id="projetos">
-          <h2 id="texto-projetos" style="display: none;" class="apresentacao_links_sub projetos">Projetos</h2> 
-          
-          <div class="projetos-container-wrapper"> <div class="swiper projetos-swiper">
-                  <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                          <a href="https://stellag2003.github.io/AmigoSecreto/" target="_blank">
-                              <img src="assets/amigo_secreto.png" alt="Amigo Secreto" class="swiper-img">
-                          </a>
-                      </div>
-                      
-                      <div class="swiper-slide">
-                          <a href="https://github.com/stellag2003/IceCreamClicker" target="_blank">
-                              <img src="assets/ice_cream_clicker.png" alt="Ice Cream Clicker" class="swiper-img">
-                          </a>
-                      </div>
-
-                      <div class="swiper-slide">
-                          <a href="https://stellag2003.github.io/AdivinheONumeroSecreto/" target="_blank">
-                              <img src="assets/numero_secreto.png" alt="Número Secreto" class="swiper-img">
-                          </a>
-                      </div>
-
-                      <div class="swiper-slide">
-                          <a href="https://stellag2003.github.io/PlayerMusicas/" target="_blank">
-                              <img src="assets/player_musica.png" alt="Player de Músicas" class="swiper-img">
-                          </a>
-                      </div>
-
-                      <div class="swiper-slide">
-                          <a href="https://github.com/stellag2003/pi-serasa-streaming" target="_blank">
-                              <img src="assets/streaming.png" alt="Streaming" class="swiper-img">
-                          </a>
-                      </div>
-
-                      <div class="swiper-slide">
-                          <a href="https://stellag2003.github.io/presente-para-o-amor-da-minha-vida/" target="_blank">
-                              <img src="assets/presente_namorados.png" alt="Presente" class="swiper-img">
-                          </a>
-                      </div>
-                      
-                  </div>
-              </div>
-              
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-          </div>
-      </section>
-            
-              
-        <section id="habilidades">
-            <div class="habilidades-container">
-                <h2 id="texto-habilidades"  style="display: none;" class="apresentacao_links_sub habilidades">Habilidades</h2>
+                <img src="assets/eu.jpg" alt="Foto de Stella Gonçalves" class="imagem" data-i18n-alt="fotoStella">
             </div>
+        </section>
+
+        <section id="projetos" class="secao">
+            <h2 id="texto-projetos" class="apresentacao_links_sub" data-i18n-titulo="tituloProjetos">Projetos</h2>
+
+            <div class="projetos-container-wrapper">
+                <button class="swiper-button-prev projetos-prev" type="button" aria-label="Projeto anterior" data-i18n-aria="projetoAnterior"></button>
+
+                <div class="swiper projetos-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="https://stellag2003.github.io/DevFlow/" target="_blank" rel="noopener">
+                                <img src="assets/dev_flow.png" data-card="dev_flow.png" alt="Projeto DevFlow" data-i18n-alt="altDevflow" class="swiper-img" loading="lazy">
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="https://stellag2003.github.io/MiniProjeto_M3/" target="_blank" rel="noopener">
+                                <img src="assets/todo_list.png" data-card="todo_list.png" alt="Projeto QG de Missões (To-Do List)" data-i18n-alt="altTodo" class="swiper-img" loading="lazy">
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="https://stellag2003.github.io/AmigoSecreto/" target="_blank" rel="noopener">
+                                <img src="assets/amigo_secreto.png" data-card="amigo_secreto.png" alt="Projeto Amigo Secreto" data-i18n-alt="altAmigo" class="swiper-img" loading="lazy">
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="https://stellag2003.github.io/PlayerMusicas/" target="_blank" rel="noopener">
+                                <img src="assets/player_musica.png" data-card="player_musica.png" alt="Projeto Player de Músicas" data-i18n-alt="altPlayer" class="swiper-img" loading="lazy">
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="https://stellag2003.github.io/presente-para-o-amor-da-minha-vida/" target="_blank" rel="noopener">
+                                <img src="assets/presente_namorados.png" data-card="presente_namorados.png" alt="Projeto Presente" data-i18n-alt="altPresente" class="swiper-img" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination projetos-paginacao"></div>
+                </div>
+
+                <button class="swiper-button-next projetos-next" type="button" aria-label="Próximo projeto" data-i18n-aria="proximoProjeto"></button>
+            </div>
+        </section>
+
+        <section id="habilidades" class="secao">
+            <h2 id="texto-habilidades" class="apresentacao_links_sub" data-i18n-titulo="tituloHabilidades">Habilidades</h2>
+
             <div class="icons">
                 <div class="tooltip">
-                  <img src="assets/java_icone.svg" alt="Java">
-                  <span class="tooltip-text">Java</span> 
+                    <img src="assets/java_icone.svg" alt="Java">
+                    <span class="tooltip-text">Java</span>
                 </div>
-              
+
                 <div class="tooltip">
-                  <img src="assets/cSharp_icone.svg" alt="C#">
-                  <span class="tooltip-text">C#</span> 
+                    <img src="assets/cSharp_icone.svg" alt="C#">
+                    <span class="tooltip-text">C#</span>
                 </div>
 
-                  <div class="tooltip">
+                <div class="tooltip">
                     <img src="assets/php_icone.svg" alt="PHP">
-                    <span class="tooltip-text">PHP</span> 
-                  </div>
-                
-                  <div class="tooltip">
-                    <img src="assets/laravel_icone.svg" alt="Laravel">
-                    <span class="tooltip-text">Laravel</span> 
-                  </div>
+                    <span class="tooltip-text">PHP</span>
+                </div>
 
-                  <div class="tooltip">
+                <div class="tooltip">
+                    <img src="assets/laravel_icone.svg" alt="Laravel">
+                    <span class="tooltip-text">Laravel</span>
+                </div>
+
+                <div class="tooltip">
                     <img src="assets/python_icone.svg" alt="Python">
-                    <span class="tooltip-text">Python</span> 
-                  </div>
+                    <span class="tooltip-text">Python</span>
+                </div>
 
                 <div class="tooltip">
                     <img src="assets/html_icone.svg" alt="HTML">
-                    <span class="tooltip-text">HTML</span> 
-                  </div>
-              
-                <div class="tooltip">
-                  <img src="assets/css_icone.svg" alt="CSS">
-                  <span class="tooltip-text">CSS</span> 
+                    <span class="tooltip-text">HTML</span>
                 </div>
-              
+
+                <div class="tooltip">
+                    <img src="assets/css_icone.svg" alt="CSS">
+                    <span class="tooltip-text">CSS</span>
+                </div>
+
                 <div class="tooltip">
                     <img src="assets/bootstrap_icone.svg" alt="Bootstrap">
-                    <span class="tooltip-text">Bootstrap</span> 
-                  </div>
+                    <span class="tooltip-text">Bootstrap</span>
+                </div>
 
                 <div class="tooltip">
                     <img src="assets/javascript_icone.svg" alt="JavaScript">
-                    <span class="tooltip-text">JavaScript</span> 
-                  </div>
-                
-                  <div class="tooltip">
+                    <span class="tooltip-text">JavaScript</span>
+                </div>
+
+                <div class="tooltip">
+                    <img src="assets/typescript_icone.svg" alt="TypeScript">
+                    <span class="tooltip-text">TypeScript</span>
+                </div>
+
+                <div class="tooltip">
                     <img src="assets/jquery_icone.svg" alt="JQuery">
-                    <span class="tooltip-text">JQuery</span> 
-                  </div>
+                    <span class="tooltip-text">JQuery</span>
+                </div>
 
                 <div class="tooltip">
-                  <img src="assets/git_icone.svg" alt="Git">
-                  <span class="tooltip-text">Git</span> 
+                    <img src="assets/react_icone.svg" alt="React">
+                    <span class="tooltip-text">React</span>
                 </div>
-              
+
                 <div class="tooltip">
-                  <img src="assets/github_icone.svg" alt="GitHub">
-                  <span class="tooltip-text">GitHub</span> 
+                    <img src="assets/nodejs_icone.svg" alt="Node.js">
+                    <span class="tooltip-text">Node.js</span>
                 </div>
-              
+
                 <div class="tooltip">
-                  <img src="assets/canva_icone.svg" alt="Canva">
-                  <span class="tooltip-text">Canva</span> 
+                    <img src="assets/git_icone.svg" alt="Git">
+                    <span class="tooltip-text">Git</span>
                 </div>
-              
+
                 <div class="tooltip">
-                  <img src="assets/figma_icone.svg" alt="Figma">
-                  <span class="tooltip-text">Figma</span> 
+                    <img src="assets/github_icone.svg" alt="GitHub">
+                    <span class="tooltip-text">GitHub</span>
                 </div>
-              
-                
+
                 <div class="tooltip">
-                  <img src="assets/mysql_icone.svg" alt="MySQL">
-                  <span class="tooltip-text">MySQL</span> 
+                    <img src="assets/linux_icone.svg" alt="Linux">
+                    <span class="tooltip-text">Linux</span>
                 </div>
-              
+
                 <div class="tooltip">
-                  <img src="assets/postgresql_icone.svg" alt="PostgreSQL">
-                  <span class="tooltip-text">PostgreSQL</span> 
+                    <img src="assets/canva_icone.svg" alt="Canva">
+                    <span class="tooltip-text">Canva</span>
                 </div>
-              </div>
-              
-            
-          
-            <section id="contatos">
-                <div class="contatos-container">
-                    <h2 id="texto-contatos" style="display: none;" class="apresentacao_links_sub contatos">Contatos</h2>
-                    <div class="apresentacao_links">
-                        <div class="icones">
-                            <button class="btn_redes_sociais">
-                                <a href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank">
-                                    <i class="fa-brands fa-linkedin icone"></i>
-                                </a>
-                            </button>
-                            <button class="btn_redes_sociais"> 
-                                <a href="https://github.com/stellag2003" target="_blank">
-                                    <i class="fa-brands fa-github icone"></i>
-                                </a>
-                            </button>
-                            <button class="btn_redes_sociais">
-                                <a href="https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?" target="_blank">
-                                    <i class="fa-solid fa-envelope icone"></i>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
+
+                <div class="tooltip">
+                    <img src="assets/figma_icone.svg" alt="Figma">
+                    <span class="tooltip-text">Figma</span>
                 </div>
-            </section>
-        </main>
-    
+
+                <div class="tooltip">
+                    <img src="assets/mysql_icone.svg" alt="MySQL">
+                    <span class="tooltip-text">MySQL</span>
+                </div>
+
+                <div class="tooltip">
+                    <img src="assets/postgresql_icone.svg" alt="PostgreSQL">
+                    <span class="tooltip-text">PostgreSQL</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contatos" class="secao">
+            <h2 id="texto-contatos" class="apresentacao_links_sub" data-i18n-titulo="tituloContatos">Contatos</h2>
+            <div class="icones">
+                <a class="btn_redes_sociais" href="https://www.linkedin.com/in/stella-goncalves-mendonca/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin icone"></i>
+                </a>
+                <a class="btn_redes_sociais" href="https://github.com/stellag2003" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fa-brands fa-github icone"></i>
+                </a>
+                <a class="btn_redes_sociais" href="https://mail.google.com/mail/?view=cm&to=stellagmendonca@gmail.com&subject=Contato&body=Olá, Stella. Podemos conversar?" data-i18n-href="linkEmail" target="_blank" rel="noopener" aria-label="E-mail">
+                    <i class="fa-solid fa-envelope icone"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
     <footer class="rodape">
-        <p>© Desenvolvido por Stella Gonçalves⭐</p>
+        <p data-i18n="rodape">© Desenvolvido por Stella Gonçalves⭐</p>
     </footer>
-    
-    <script src="script.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
