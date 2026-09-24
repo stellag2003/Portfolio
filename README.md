@@ -14,7 +14,3 @@ Meu portfólio de desenvolvedora Full Stack: quem sou, projetos, habilidades e c
 ## Tecnologias
 
 HTML, CSS e JavaScript puro, em um único `index.html`, sem build.
-
-## Rodando localmente
-
-Basta abrir o `index.html` no navegador.
