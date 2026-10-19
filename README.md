@@ -2,7 +2,7 @@
 
 Meu portfólio de desenvolvedora Full Stack: quem sou, projetos, habilidades e contato.
 
-🔗 **Acesse:** https://portfolio-seven-liard-bp0a83rzmk.vercel.app/
+🔗 **Acesse:** https://stellagoncalves.vercel.app/
 
 ## Destaques
 
